@@ -259,42 +259,42 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6">
 
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">About Me</h2>
-            <CircularText
-              text="MOCH*ALTHAF*JAUHAR*"
-              onHover="speedUp"
-              spinDuration={20}
-              className="custom-class"
-            />
-<PixelTransition
-        firstContent={
-          <Image
-            src="/assets/althaf.jpg"
-            alt="Foto pribadi saya"
-            width={500}
-            height={500}
-            style={{ objectFit: "cover" }}
-            className="w-full h-full"
-          />
-        }
-        secondContent={
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "#111",
-            }}
-          >
-            <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffff" }}>Meow!</p>
-          </div>
-        }
-        gridSize={12}
-        pixelColor="#ffffff"
-        animationStepDuration={0.4}
-        className="custom-pixel-card"
-      />
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"> about <span className="line-through">you</span> me</h2>
+            
+              {/* PixelTransition di depan */}
+              <div className="flex items-center justify-center py-1">
+                <PixelTransition
+                  firstContent={
+                    <Image
+                      src="/assets/lanyard/althaf.jpg"
+                      alt="Foto pribadi saya"
+                      width={500}
+                      height={500}
+                      style={{ objectFit: "cover" }}
+                      className="w-full h-full"
+                    />
+                  }
+                  secondContent={
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "grid",
+                        placeItems: "center",
+                        backgroundColor: "#111",
+                      }}
+                    >
+                      <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
+                    </div>
+                  }
+                  gridSize={12}
+                  pixelColor="#ffffff"
+                  animationStepDuration={0.4}
+                  className="custom-pixel-card"
+                />
+              </div>
+      
+
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Berikut adalah beberapa proyek yang telah saya kerjakan, termasuk aplikasi web dengan Laravel dan
               portofolio interaktif menggunakan Next.js. Kunjungi repository saya untuk detail lebih lanjut!
