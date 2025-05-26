@@ -44,9 +44,128 @@ export default function Home() {
         />
       </div>
       {/* ... (navbar dan konten lainnya tetap sama) ... */}
+       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
-        {/* ... navbar ... */}
+        <div className="max-w-7xl mx-auto">
+          <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3">
+            <div className="flex items-center justify-between">
+              {/* Logo/Brand */}
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-br from-[#251BF0] to-[#03B3C3] rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">MA</span>
+                </div>
+                <span className="text-white font-semibold text-base sm:text-lg hidden xs:block">Althaf</span>
+              </div>
+
+              {/* Desktop Navigation Links */}
+              <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="#home" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
+                  Home
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#about" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
+                  About
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#projects" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
+                  Projects
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#contact" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
+                  Contact
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </div>
+
+              {/* Desktop CTA Button */}
+              <div className="hidden lg:block">
+                <button className="bg-gradient-to-r from-[#251BF0] to-[#03B3C3] text-white px-4 xl:px-6 py-2 rounded-xl font-medium hover:shadow-lg hover:shadow-[#251BF0]/25 transition-all duration-300 hover:scale-105 text-sm xl:text-base">
+                  Let's Talk
+                </button>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={toggleMobileMenu}
+                className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
+                aria-label="Toggle mobile menu"
+              >
+                <svg
+                  className={`w-6 h-6 transition-transform duration-300 ${isMobileMenuOpen ? "rotate-90" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {isMobileMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
+
+            {/* Mobile Menu Dropdown */}
+            <div
+              className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
+                ? "max-h-80 opacity-100 mt-4 pb-4"
+                : "max-h-0 opacity-0 overflow-hidden"
+                }`}
+            >
+              <div className="border-t border-white/10 pt-4 space-y-3">
+                <a
+                  href="#home"
+                  onClick={closeMobileMenu}
+                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
+                >
+                  Home
+                </a>
+                <a
+                  href="#about"
+                  onClick={closeMobileMenu}
+                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
+                >
+                  About
+                </a>
+                <a
+                  href="#projects"
+                  onClick={closeMobileMenu}
+                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
+                >
+                  Projects
+                </a>
+                <a
+                  href="#contact"
+                  onClick={closeMobileMenu}
+                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
+                >
+                  Contact
+                </a>
+                <div className="pt-2">
+                  <button
+                    onClick={closeMobileMenu}
+                    className="w-full bg-gradient-to-r from-[#251BF0] to-[#03B3C3] text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-[#251BF0]/25 transition-all duration-300"
+                  >
+                    Let's Talk
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
+
+      {/* Content - Landing Page */}
       <div className="relative z-10 container mx-auto min-h-screen flex items-center text-white pt-24 sm:pt-20 px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 w-full gap-8 lg:gap-0">
           <div className="lg:col-span-6 flex items-center justify-center lg:justify-start mb-8 lg:mb-0">
@@ -123,57 +242,69 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Additional Content - About Section */}
       <section id="about" className="relative z-10 py-8 bg-black">
         <div className="container mx-auto px-4 sm:px-6">
           <ScrollVelocity
-            texts={["Althaf Jauhar", "Gabut Doang"]}
+            texts={['Althaf Jauhar', 'Gabut Doang']}
             velocity={100}
             className="custom-scroll-text text-white"
           />
         </div>
       </section>
+
+      {/* Additional Content - Projects Section */}
       <section id="projects" className="relative z-10 py-16 bg-black">
         <div className="container mx-auto px-4 sm:px-6">
+
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">About <span className="line-through">You</span> Me</h2>
-            <div className="flex items-center justify-center py-1">
-              <PixelTransition
-                firstContent={
-                  <Image
-                    src="/assets/lanyard/althaf.jpg"
-                    alt="Foto pribadi saya"
-                    width={500}
-                    height={500}
-                    style={{ objectFit: "cover" }}
-                    className="w-full h-full"
-                  />
-                }
-                secondContent={
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "grid",
-                      placeItems: "center",
-                      backgroundColor: "#111",
-                    }}
-                  >
-                    <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
-                  </div>
-                }
-                gridSize={12}
-                pixelColor="#ffffff"
-                animationStepDuration={0.4}
-                className="custom-pixel-card"
-              />
-            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"> About <span className="line-through">You</span> Me</h2>
+            
+              {/* PixelTransition di depan */}
+              <div className="flex items-center justify-center py-1">
+                <PixelTransition
+                  firstContent={
+                    <Image
+                      src="/assets/lanyard/althaf.jpg"
+                      alt="Foto pribadi saya"
+                      width={500}
+                      height={500}
+                      style={{ objectFit: "cover" }}
+                      className="w-full h-full"
+                    />
+                  }
+                  secondContent={
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "grid",
+                        placeItems: "center",
+                        backgroundColor: "#111",
+                      }}
+                    >
+                      <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
+                    </div>
+                  }
+                  gridSize={12}
+                  pixelColor="#ffffff"
+                  animationStepDuration={0.4}
+                  className="custom-pixel-card"
+                />
+              </div>
+      
+
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Berikut adalah beberapa proyek yang telah saya kerjakan, termasuk aplikasi web dengan Laravel dan
               portofolio interaktif menggunakan Next.js. Kunjungi repository saya untuk detail lebih lanjut!
             </p>
           </div>
+
         </div>
       </section>
+
+      {/* Additional Content - Contact Section */}
       <section id="contact" className="relative z-10 py-16 bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <AnimatedContent
