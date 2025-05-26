@@ -259,7 +259,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6">
 
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"> about <span className="line-through">you</span> me</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"> About <span className="line-through">You</span> Me</h2>
             
               {/* PixelTransition di depan */}
               <div className="flex items-center justify-center py-1">
