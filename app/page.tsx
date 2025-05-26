@@ -9,6 +9,7 @@ import BlurText from "./components/BlurText/BlurText";
 import Hyperspeed from "./components/Hyperspeed/Hyperspeed";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
 import GradientText from "./components/GradientText/GradientText";
+import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
 
 const Lanyard = dynamic(() => import("./components/Lanyard/Lanyard"), { ssr: false });
 const SplashCursor = dynamic(() => import("./components/SplashCursor/SplashCursor"), { ssr: false });
@@ -44,7 +45,7 @@ export default function Home() {
         />
       </div>
       {/* ... (navbar dan konten lainnya tetap sama) ... */}
-       {/* Navbar */}
+      {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
         <div className="max-w-7xl mx-auto">
           <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3">
@@ -260,45 +261,46 @@ export default function Home() {
 
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"> About <span className="line-through">You</span> Me</h2>
-            
-              {/* PixelTransition di depan */}
-              <div className="flex items-center justify-center py-1">
-                <PixelTransition
-                  firstContent={
-                    <Image
-                      src="/assets/lanyard/althaf.jpg"
-                      alt="Foto pribadi saya"
-                      width={500}
-                      height={500}
-                      style={{ objectFit: "cover" }}
-                      className="w-full h-full"
-                    />
-                  }
-                  secondContent={
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "grid",
-                        placeItems: "center",
-                        backgroundColor: "#111",
-                      }}
-                    >
-                      <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
-                    </div>
-                  }
-                  gridSize={12}
-                  pixelColor="#ffffff"
-                  animationStepDuration={0.4}
-                  className="custom-pixel-card"
-                />
-              </div>
-      
 
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Berikut adalah beberapa proyek yang telah saya kerjakan, termasuk aplikasi web dengan Laravel dan
-              portofolio interaktif menggunakan Next.js. Kunjungi repository saya untuk detail lebih lanjut!
-            </p>
+            {/* PixelTransition di depan */}
+            <div className="flex items-center justify-center py-1">
+              <PixelTransition
+                firstContent={
+                  <Image
+                    src="/assets/lanyard/althaf.jpg"
+                    alt="Foto pribadi saya"
+                    width={500}
+                    height={500}
+                    style={{ objectFit: "cover" }}
+                    className="w-full h-full"
+                  />
+                }
+                secondContent={
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "grid",
+                      placeItems: "center",
+                      backgroundColor: "#111",
+                    }}
+                  >
+                    <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
+                  </div>
+                }
+                gridSize={12}
+                pixelColor="#ffffff"
+                animationStepDuration={0.4}
+                className="custom-pixel-card"
+              />
+            </div>
+
+            <div className="w-full mt-12">
+              <p className="text-gray-100 text-lg w-full">
+                Saya Moch. Althaf Jauhar, seorang mahasiswa UIN Sunan Ampel Surabaya yang bersemangat dalam dunia pengembangan web dan teknologi. Saya memiliki ketertarikan mendalam pada desain interaktif dan animasi modern, yang saya wujudkan melalui proyek-proyek kreatif menggunakan framework seperti Next.js dan Laravel. Saya senang mengeksplorasi teknologi baru, berkontribusi pada proyek open-source, dan menciptakan pengalaman digital yang memukau. Di luar coding, saya adalah seseorang yang suka belajar hal baru dan selalu mencari inspirasi untuk mengembangkan keterampilan saya. Mari terhubung untuk berkolaborasi atau mendiskusikan ide-ide inovatif!
+              </p>
+            </div>
+
           </div>
 
         </div>
