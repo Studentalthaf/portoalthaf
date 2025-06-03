@@ -16,6 +16,9 @@ import VariableProximity from "./components/VariableProximity/VariableProximity"
 import FallingText from "./components/FallingText/FallingText";
 import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiSass, SiDart, SiGraphql, SiOpenai } from 'react-icons/si';
 import { FaReact, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import Dock from './components/Dock/Dock';
+import { FaHome, FaUser, FaCode, FaEnvelope } from 'react-icons/fa';
+import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
 // Import komponen AnimatedPinDemo secara dinamis
 const AnimatedPinDemo = dynamic(() => import('./components/ui/3d-pin').then(mod => mod.AnimatedPinDemo), { ssr: false });
 
@@ -30,6 +33,7 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const projectContainerRef = useRef<HTMLDivElement>(null);
+  const contactSectionRef = useRef<HTMLElement>(null); // Ref for Contact section
 
   // State untuk drag-to-scroll
   const [isDragging, setIsDragging] = useState(false);
@@ -81,142 +85,96 @@ export default function Home() {
   // Event handler untuk mengakhiri dragging
   const handleMouseUp = () => {
     setIsDragging(false);
-     if (!projectContainerRef.current) return;
+    if (!projectContainerRef.current) return;
     projectContainerRef.current.style.cursor = 'grab';
     projectContainerRef.current.style.userSelect = 'auto';
   };
 
-   // Event handler saat mouse keluar dari area
-   const handleMouseLeave = () => {
-     setIsDragging(false);
-      if (!projectContainerRef.current) return;
-     projectContainerRef.current.style.cursor = 'grab';
-     projectContainerRef.current.style.userSelect = 'auto';
-   };
+  // Event handler saat mouse keluar dari area
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (!projectContainerRef.current) return;
+    projectContainerRef.current.style.cursor = 'grab';
+    projectContainerRef.current.style.userSelect = 'auto';
+  };
+
+  const dockItems = [
+    {
+      label: 'Home',
+      href: '#home',
+      icon: <FaHome />
+    },
+    {
+      label: 'About',
+      href: '#about',
+      icon: <FaUser />
+    },
+    {
+      label: 'Projects',
+      href: '#projects',
+      icon: <FaCode />
+    },
+    {
+      label: 'Contact',
+      href: '#contact',
+      icon: <FaEnvelope />
+    }
+  ];
+
+  // State untuk mengontrol tampilan Dock (hitam/putih)
+  const [isDockDark, setIsDockDark] = useState(false);
+
+  // Observer untuk mendeteksi ketika Contact Section terlihat di viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Jika Contact Section sepenuhnya terlihat (atau sebagian besar, tergantung threshold)
+        // set isDockDark menjadi true, jika tidak false.
+        // Kita mungkin perlu menyesuaikan threshold agar sesuai dengan posisi Dock di bagian bawah.
+        // Entry.isIntersecting mendeteksi apakah elemen masuk viewport sama sekali.
+        // Entry.intersectionRatio adalah persentase elemen yang terlihat.
+        if (entry.isIntersecting) {
+            // Check if a significant portion of the contact section is visible
+            // This assumes the dock is at the bottom, so when the contact section enters the bottom part of the viewport,
+            // we want the dock to become dark.
+            // A threshold of 0.5 means when 50% of the element is visible, trigger the callback.
+            // We might need to refine this logic based on where the Dock is fixed.
+            setIsDockDark(true);
+        } else {
+            setIsDockDark(false);
+        }
+      },
+      {
+        root: null, // Menggunakan viewport sebagai root
+        rootMargin: '0px', // Tanpa margin tambahan
+        threshold: 0.1, // Trigger ketika 10% dari elemen terlihat
+      }
+    );
+
+    if (contactSectionRef.current) {
+      observer.observe(contactSectionRef.current);
+    }
+
+    return () => {
+      if (contactSectionRef.current) {
+        observer.unobserve(contactSectionRef.current);
+      }
+    };
+  }, [contactSectionRef]); // Dependency pada ref section kontak
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
       <SplashCursor />
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-4 sm:px-6 py-3">
-            <div className="flex items-center justify-between">
-              {/* Logo/Brand */}
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-[#251BF0] to-[#03B3C3] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">MA</span>
-                </div>
-                <span className="text-white font-semibold text-base sm:text-lg hidden xs:block">Althaf</span>
-              </div>
 
-              {/* Desktop Navigation Links */}
-              <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-                <a href="#home" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
-                  Home
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="#about" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
-                  About
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="#projects" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
-                  Projects
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="#contact" className="text-white/80 hover:text-white transition-colors duration-300 relative group">
-                  Contact
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#251BF0] to-[#03B3C3] group-hover:w-full transition-all duration-300"></span>
-                </a>
-              </div>
-
-              {/* Desktop CTA Button */}
-              <div className="hidden lg:block">
-                <button className="bg-gradient-to-r from-[#251BF0] to-[#03B3C3] text-white px-4 xl:px-6 py-2 rounded-xl font-medium hover:shadow-lg hover:shadow-[#251BF0]/25 transition-all duration-300 hover:scale-105 text-sm xl:text-base">
-                  Let's Talk
-                </button>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={toggleMobileMenu}
-                className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
-                aria-label="Toggle mobile menu"
-              >
-                <svg
-                  className={`w-6 h-6 transition-transform duration-300 ${isMobileMenuOpen ? "rotate-90" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  {isMobileMenuOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  )}
-                </svg>
-              </button>
-            </div>
-
-            {/* Mobile Menu Dropdown */}
-            <div
-              className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
-                ? "max-h-80 opacity-100 mt-4 pb-4"
-                : "max-h-0 opacity-0 overflow-hidden"
-                }`}
-            >
-              <div className="border-t border-white/10 pt-4 space-y-3">
-                <a
-                  href="#home"
-                  onClick={closeMobileMenu}
-                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
-                >
-                  Home
-                </a>
-                <a
-                  href="#about"
-                  onClick={closeMobileMenu}
-                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
-                >
-                  About
-                </a>
-                <a
-                  href="#projects"
-                  onClick={closeMobileMenu}
-                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#contact"
-                  onClick={closeMobileMenu}
-                  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
-                >
-                  Contact
-                </a>
-                <div className="pt-2">
-                  <button
-                    onClick={closeMobileMenu}
-                    className="w-full bg-gradient-to-r from-[#251BF0] to-[#03B3C3] text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-[#251BF0]/25 transition-all duration-300"
-                  >
-                    Let's Talk
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Replace navbar with Dock */}
+      <Dock
+        panelHeight={98}
+        baseItemSize={50}
+        magnification={90}
+        distance={20}
+        items={dockItems}
+        isDark={isDockDark} // Teruskan state isDark ke komponen Dock
+         />
 
       {/* Content - Landing Page */}
       <div className="relative z-10 container mx-auto min-h-screen flex items-center text-white pt-24 sm:pt-20 px-4 sm:px-6">
@@ -273,15 +231,14 @@ export default function Home() {
       </section>
 
       {/* Additional Content - Projects Section */}
-      <section id="projects" className="relative z-10 pt-10 pb-2 lg:pb-0 bg-black container mx-auto min-h-screen">
+      <section id="projects" className="relative z-10 pt-10 pb-1 lg:pb-0 bg-black container mx-auto min-h-screen">
         <div className="container mx-auto px-4 sm:px-6">
 
-          {/* Flex container for layout */} 
-          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8">
-            
-            {/* Left side: PixelTransition */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center text-center lg:text-left">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"> About <span className="line-through text-gray-400">You</span> Me</h2>
+          {/* Flex container for layout */}
+          <div className="flex flex-col items-center justify-center gap-8">
+            {/* Photo Section */}
+            <div className="w-full max-w-2xl flex flex-col items-center text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">About <span className="line-through text-gray-400">You</span> Me</h2>
 
               {/* PixelTransition di depan */}
               <div className="flex items-center justify-center py-1 w-full">
@@ -293,7 +250,7 @@ export default function Home() {
                       width={500}
                       height={500}
                       style={{ objectFit: "cover" }}
-                      className="w-full h-full"
+                      className="w-full h-full rounded-lg"
                     />
                   }
                   secondContent={
@@ -305,6 +262,7 @@ export default function Home() {
                         placeItems: "center",
                         backgroundColor: "#111",
                       }}
+                      className="rounded-lg"
                     >
                       <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
                     </div>
@@ -317,38 +275,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right side: FallingText */}
-            <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left">
-              <div className="mt-6 mx-auto text-white" style={{ height: '400px', width: '100%' }}>
-                <FallingText
-                  text="Saya adalah mahasiswa semester akhir yang memiliki ketertarikan besar dalam pengembangan web modern. Fokus utama saya saat ini adalah memperdalam pemahaman dan praktik menggunakan Next.js sebagai framework frontend yang powerful serta Laravel sebagai backend framework yang fleksibel dan efisien. Ketertarikan ini muncul dari keinginan saya untuk membangun aplikasi web yang cepat, aman, dan memiliki pengalaman pengguna yang baik. Saya senang belajar hal-hal baru dan selalu berusaha mengikuti perkembangan teknologi terbaru di dunia pengembangan web."
-                  highlightWords={[
-                    "mahasiswa semester akhir",
-                    "pengembangan web",
-                    "Next.js",
-                    "Laravel",
-                    "frontend",
-                    "backend",
-                    "aplikasi web",
-                    "cepat",
-                    "aman",
-                    "pengalaman pengguna",
-                    "belajar",
-                    "teknologi",
-                    "modern",
-                    "praktik",
-                    "fleksibel",
-                    "efisien"
-                  ]}
-                  trigger="click"
-                  backgroundColor="transparent"
-                  gravity={0.8}
-                  fontSize="1.25rem"
-                  wireframes={false}
+            {/* Text Section - Now below the photo */}
+            <div className="w-full">
+              <div className="mt-8 mx-auto" style={{ minHeight: '200px' }}>
+                <ScrollColorText
+                  text="Saya memungkinkan pengembangan web modern untuk membuka kemungkinan dalam menciptakan pengalaman digital yang berdampak: cukup dengan @NextJS #Laravel, dan saya akan mewujudkan ide-ide Anda menjadi kenyataan. Sebagai mahasiswa semester akhir yang bersemangat dalam pengembangan web, saya fokus membangun aplikasi yang cepat, aman, dan ramah pengguna. Keahlian saya mencakup framework frontend seperti Next.js hingga solusi backend dengan Laravel, selalu mengikuti perkembangan teknologi web terbaru."
+                  className="text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed"
                 />
               </div>
             </div>
-
           </div> {/* End of flex container */}
 
         </div>
@@ -364,120 +299,136 @@ export default function Home() {
             <div className="absolute inset-0 backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center opacity-70" style={{ width: '180px', height: '80px', transform: 'translate(-50%, -50%)', left: '50%', top: '50%' }}>
               {/* Ini placeholder background untuk button Skills */}
             </div>
-            <button className="relative z-10 text-4xl sm:text-5xl font-bold text-white shiney-text appearance-none border-none bg-transparent p-0 cursor-pointer">
+            <h2 className="relative z-10 text-4xl sm:text-5xl font-bold text-white shiney-text appearance-none border-none bg-transparent p-0 cursor-pointer">
               Skills
-            </button>
+            </h2>
           </div>
 
-          {/* Layout for Skill Icons (Left and Right) */}
-          <div className="flex flex-col lg:flex-row justify-center items-start w-full gap-12 relative z-[2]">
-            
-            {/* Left Column for Icons */}
-            <div className="w-full lg:w-1/3 flex flex-col items-center gap-6 relative">
-              {/* Ikon Skill Kiri (menggunakan react-icons) */}
-              {/* Anda bisa menambahkan elemen visual untuk garis di sini, misalnya dengan SVG atau Canvas */}
-              <div className="flex items-center gap-3"><SiNextdotjs size={40} className="text-white" /><span className="text-white text-lg">Next.js</span></div>
-              <div className="flex items-center gap-3"><FaReact size={40} className="text-white" /><span className="text-white text-lg">React</span></div>
-             
-              <div className="flex items-center gap-3"><SiOpenai size={40} className="text-white" /><span className="text-white text-lg">ChatGPT</span></div>
-              {/* Tambahkan ikon skill lainnya di sini dari library react-icons */}
-            </div>
+          {/* Layout for Skill Items */}
+          <div className="flex flex-col items-center w-full gap-8 relative z-[2]">
+            {/* List of Skills (placeholder) */}
+            {/* This will be replaced with a more dynamic list and components */}
+            <div className="w-full lg:w-2/3 flex flex-col gap-6">
 
-            {/* Area untuk Garis Penghubung (SVG/Canvas) */}
-            {/* Ini adalah area di tengah antara dua kolom ikon dan button Skills. */}
-            {/* Anda bisa merender elemen SVG atau Canvas di sini untuk menggambar garis. */}
-            <div className="hidden lg:flex w-1/3 justify-center items-center relative" style={{ minHeight: '300px' }}>
-                 {/* Placeholder untuk kanvas atau SVG */}
-                 {/* Contoh dasar SVG: <svg className="absolute inset-0 w-full h-full"></svg> */}
-            </div>
+              {/* Contoh Skill Item dengan Persentase */}
+              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+                <div className="flex items-center gap-4">
+                  <SiNextdotjs size={30} className="text-white" />
+                  <span className="text-white text-lg font-semibold">Next.js</span>
+                </div>
+                <div className="text-white text-lg font-bold">30%</div>
+              </div>
 
-            {/* Right Column for Icons */}
-            <div className="w-full lg:w-1/3 flex flex-col items-center gap-6 relative">
-              {/* Ikon Skill Kanan (menggunakan react-icons) */}
-              {/* Anda bisa menambahkan elemen visual untuk garis di sini, misalnya dengan SVG atau Canvas */}
-              <div className="flex items-center gap-3"><SiLaravel size={40} className="text-white" /><span className="text-white text-lg">Laravel</span></div>
-              <div className="flex items-center gap-3"><SiPhp size={40} className="text-white" /><span className="text-white text-lg">PHP</span></div>
-              
-              <div className="flex items-center gap-3"><FaHtml5 size={40} className="text-white" /><span className="text-white text-lg">HTML5</span></div>
-          
+               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+                <div className="flex items-center gap-4">
+                  <FaReact size={30} className="text-white" />
+                  <span className="text-white text-lg font-semibold">React</span>
+                </div>
+                <div className="text-white text-lg font-bold">35%</div>
+              </div>
+
+               {/* New Skill: ChatGPT */}
+               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+                <div className="flex items-center gap-4">
+                  <SiOpenai size={30} className="text-white" />
+                  <span className="text-white text-lg font-semibold">ChatGPT</span>
+                </div>
+                <div className="text-white text-lg font-bold">100% hehehe</div>
+              </div>
+
+               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+                <div className="flex items-center gap-4">
+                  <SiLaravel size={30} className="text-white" />
+                  <span className="text-white text-lg font-semibold">Laravel</span>
+                </div>
+                <div className="text-white text-lg font-bold">80%</div>
+              </div>
+
+               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+                <div className="flex items-center gap-4">
+                  <SiPhp size={30} className="text-white" />
+                  <span className="text-white text-lg font-semibold">PHP</span>
+                </div>
+                <div className="text-white text-lg font-bold">75%</div>
+              </div>
+
+              {/* Tambahkan skill lain di sini sesuai kebutuhan */}
+
             </div>
           </div>
-
-
 
         </div>
       </section>
 
       {/* New Section - My Projects */}
-      <section id="my-projects" className="relative z-10 py-16 bg-black">
+      <section id="my-projects" className="bg-black">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center text-white mb-12">
+          <div className="text-center text-white mb-4">
             <h2 className="text-3xl sm:text-4xl font-bold">My Projects</h2>
           </div>
           {/* Container utama untuk area scrollable dan indikator */}
-          <div className="relative flex items-center">
+          <div className="relative flex items-center px-2 sm:px-4">
             {/* Indikator/Tombol Kiri */}
             <button
               onClick={scrollLeft}
               className="absolute left-0 z-20 h-full w-12 flex items-center justify-center bg-gradient-to-r from-black to-transparent text-white opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
               aria-label="Scroll Left"
             >
-              {/* Anda bisa menambahkan ikon atau teks di sini jika perlu */}
-              
             </button>
 
-            {/* Container card proyek yang dapat digulir - Tambahkan event listener untuk drag-to-scroll */}
-            <div 
-              ref={projectContainerRef} 
-              className="flex flex-nowrap justify-start gap-10 overflow-x-auto pb-4 scrollbar-hide w-full cursor-grab"
+            {/* Container card proyek yang dapat digulir */}
+            <div
+              ref={projectContainerRef}
+              className="flex flex-nowrap justify-start gap-16 overflow-x-auto pb-8 scrollbar-hide w-full cursor-grab px-1 transition-transform duration-300 ease-out"
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseLeave}
+              style={{ willChange: 'scroll-position' }} // Hint browser untuk optimasi scroll
             >
-               {/* Contoh penggunaan AnimatedPinDemo */}
+              {/* Contoh penggunaan AnimatedPinDemo dengan gambar */}
               <div className="flex-none w-80">
-                <AnimatedPinDemo 
-                  title="github.com/Studentalthaf"
+                <AnimatedPinDemo
+                  title="Project 1"
                   href="https://github.com/Studentalthaf"
+                  imageSrc="https://picsum.photos/seed/project1/600/400"
                 />
               </div>
-              {/* Tambahkan lebih banyak instance AnimatedPinDemo untuk setiap proyek */}
               <div className="flex-none w-80">
-                <AnimatedPinDemo 
-                   title="github.com/Studentalthaf"
-                   href="https://github.com/Studentalthaf"
-                 />
+                <AnimatedPinDemo
+                  title="Project 2"
+                  href="https://github.com/Studentalthaf"
+                  imageSrc="https://picsum.photos/seed/project2/600/400"
+                />
               </div>
               <div className="flex-none w-80">
-                <AnimatedPinDemo 
-                   title="github.com/Studentalthaf"
-                   href="https://github.com/Studentalthaf"
-                 />
+                <AnimatedPinDemo
+                  title="Project 3"
+                  href="https://github.com/Studentalthaf"
+                  imageSrc="https://picsum.photos/seed/project3/600/400"
+                />
               </div>
               <div className="flex-none w-80">
-                <AnimatedPinDemo 
-                   title="github.com/Studentalthaf"
-                   href="https://github.com/Studentalthaf"
-                 />
+                <AnimatedPinDemo
+                  title="Project 4"
+                  href="https://github.com/Studentalthaf"
+                  imageSrc="https://picsum.photos/seed/project4/600/400"
+                />
               </div>
-              {/* Anda bisa menambahkan lebih banyak instance AnimatedPinDemo untuk setiap proyek */}
-              {/* <AnimatedPinDemo /> */}
             </div>
 
             {/* Indikator/Tombol Kanan */}
-             <button
+            <button
               onClick={scrollRight}
               className="absolute right-0 z-20 h-full w-12 flex items-center justify-center bg-gradient-to-l from-black to-transparent text-white opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
               aria-label="Scroll Right"
             >
-              {/* Anda bisa menambahkan ikon atau teks di sini jika perlu */}
             </button>
           </div>
         </div>
       </section>
       {/* Additional Content - Contact Section */}
-      <section id="contact" className="relative z-10 py-16 bg-gray-900">
+      <section id="contact" ref={contactSectionRef} className="relative z-10 py-16 bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6">
           <AnimatedContent
             distance={150}
@@ -489,21 +440,44 @@ export default function Home() {
             scale={1.1}
             threshold={0.2}
           >
-            <div className="text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Contact Me</h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                Silakan hubungi saya melalui email atau media sosial untuk kolaborasi atau pertanyaan lebih lanjut.
-                Saya siap untuk mendiskusikan ide-ide baru!
-              </p>
-              <div className="mt-6">
-                <GradientText
-                  colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-                  animationSpeed={3}
-                  showBorder={false}
-                  className="px-5 sm:px-7 py-2 sm:py-3 rounded-lg border text-sm sm:text-base"
-                >
-                  Email: althaf@example.com
-                </GradientText>
+            {/* Grid Container */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+              {/* Left Side: Lanyard */}
+              <div className="lg:col-span-6 flex justify-center items-center">
+                {/* Placeholder for Lanyard component */}
+                {/* Replace with actual Lanyard component when ready */}
+                <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+              </div>
+
+              {/* Right Side: Contact Form */}
+              <div className="lg:col-span-6">
+                <div className="text-center lg:text-left mb-8">
+                  <h2 className="text-3xl sm:text-4xl font-bold">Contact Me</h2>
+                  <p className="text-gray-700 text-lg mt-4">
+                   Form ini masih ga guna cuman tampilan doang so sorry 
+                  </p>
+                </div>
+                <form className="flex flex-col gap-4">
+                  {/* Field untuk nama/email pengirim */}
+                  <input
+                    type="text" // Atau type="email" jika diinginkan
+                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black"
+                    placeholder="Nama atau Email Anda..."
+                  />
+                  {/* Textarea for message */}
+                  <textarea
+                    rows={6}
+                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black"
+                    placeholder="Pesan Anda..."
+                  ></textarea>
+                  {/* Submit button */}
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                  >
+                    Kirim Pesan
+                  </button>
+                </form>
               </div>
             </div>
           </AnimatedContent>
