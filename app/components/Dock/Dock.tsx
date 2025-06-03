@@ -93,25 +93,22 @@ function DockItem({
 
   // Hitung jarak mouse dari pusat item ini (menggunakan posisi absolut mouseX)
   // Modifikasi ini untuk mempertimbangkan jarak vertikal juga
-  const mouseDistance: MotionValue<number> = useTransform([mouseX, mouseY], ([latestMouseX, latestMouseY]: [number, number]): number => {
-    if (!ref.current) return distance; // Jika ref belum siap, anggap jarak jauh
+  const mouseDistance = useTransform(
+    [mouseX, mouseY],
+    (latest: number[]) => {
+      if (!ref.current) return distance; // Jika ref belum siap, anggap jarak jauh
 
-    const rect = ref.current.getBoundingClientRect();
-    const itemCenterX = rect.left + rect.width / 2;
-    const itemCenterY = rect.top + rect.height / 2;
+      const rect = ref.current.getBoundingClientRect();
+      const itemCenterX = rect.left + rect.width / 2;
+      const itemCenterY = rect.top + rect.height / 2;
 
-    const deltaX = latestMouseX - itemCenterX;
-    const deltaY = latestMouseY - itemCenterY;
+      const deltaX = latest[0] - itemCenterX;
+      const deltaY = latest[1] - itemCenterY;
 
-    // Gunakan jarak Euclidean (akar kuadrat dari deltaX^2 + deltaY^2)
-    // Atau gunakan jarak Manhattan (Math.abs(deltaX) + Math.abs(deltaY))
-    // Jarak Euclidean lebih umum untuk jarak "sebenarnya"
-    const euclideanDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-
-    // Kita masih ingin menggunakan 'distance' prop sebagai radius pengaruh.
-    // Jadi, kembalikan jarak Euclidean.
-    return euclideanDistance;
-  });
+      // Gunakan jarak Euclidean
+      return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    }
+  );
 
   // Hitung ukuran target berdasarkan jarak
   const targetSize = useTransform(
