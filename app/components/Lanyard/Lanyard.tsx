@@ -30,6 +30,7 @@ interface LanyardProps {
   gravity?: [number, number, number];
   fov?: number;
   transparent?: boolean;
+  onVisibilityChange?: (isVisible: boolean) => void;
 }
 
 export default function Lanyard({
@@ -37,10 +38,46 @@ export default function Lanyard({
   gravity = [0, -40, 0],
   fov = 20,
   transparent = true,
+  onVisibilityChange,
 }: LanyardProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [key, setKey] = useState(0); // Key untuk memaksa re-render
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Reset posisi dan trigger animasi jatuh
+          setKey(prev => prev + 1);
+          if (onVisibilityChange) {
+            onVisibilityChange(true);
+          }
+        } else {
+          if (onVisibilityChange) {
+            onVisibilityChange(false);
+          }
+        }
+      },
+      {
+        threshold: 0.1, // Trigger ketika 10% dari elemen terlihat
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [onVisibilityChange]);
+
   return (
-    <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
+    <div ref={containerRef} className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
       <Canvas
+        key={key} // Memaksa re-render Canvas saat key berubah
         camera={{ position, fov }}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) =>

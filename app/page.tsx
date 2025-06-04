@@ -15,9 +15,9 @@ import TypingScrollText from "./components/TypingScrollText/TypingScrollText";
 import VariableProximity from "./components/VariableProximity/VariableProximity";
 import FallingText from "./components/FallingText/FallingText";
 import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiSass, SiDart, SiGraphql, SiOpenai } from 'react-icons/si';
-import { FaReact, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Dock from './components/Dock/Dock';
-import { FaHome, FaUser, FaCode, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaUser, FaCode } from 'react-icons/fa';
 import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
 // Import komponen AnimatedPinDemo secara dinamis
 const AnimatedPinDemo = dynamic(() => import('./components/ui/3d-pin').then(mod => mod.AnimatedPinDemo), { ssr: false });
@@ -134,14 +134,14 @@ export default function Home() {
         // Entry.isIntersecting mendeteksi apakah elemen masuk viewport sama sekali.
         // Entry.intersectionRatio adalah persentase elemen yang terlihat.
         if (entry.isIntersecting) {
-            // Check if a significant portion of the contact section is visible
-            // This assumes the dock is at the bottom, so when the contact section enters the bottom part of the viewport,
-            // we want the dock to become dark.
-            // A threshold of 0.5 means when 50% of the element is visible, trigger the callback.
-            // We might need to refine this logic based on where the Dock is fixed.
-            setIsDockDark(true);
+          // Check if a significant portion of the contact section is visible
+          // This assumes the dock is at the bottom, so when the contact section enters the bottom part of the viewport,
+          // we want the dock to become dark.
+          // A threshold of 0.5 means when 50% of the element is visible, trigger the callback.
+          // We might need to refine this logic based on where the Dock is fixed.
+          setIsDockDark(true);
         } else {
-            setIsDockDark(false);
+          setIsDockDark(false);
         }
       },
       {
@@ -174,7 +174,7 @@ export default function Home() {
         distance={20}
         items={dockItems}
         isDark={isDockDark} // Teruskan state isDark ke komponen Dock
-         />
+      />
 
       {/* Content - Landing Page */}
       <div className="relative z-10 container mx-auto min-h-screen flex items-center text-white pt-24 sm:pt-20 px-4 sm:px-6">
@@ -279,20 +279,20 @@ export default function Home() {
             <div className="w-full">
               <div className="mt-8 mx-auto" style={{ minHeight: '200px' }}>
                 <ScrollColorText
-                  text="Saya memungkinkan pengembangan web modern untuk membuka kemungkinan dalam menciptakan pengalaman digital yang berdampak: cukup dengan @NextJS #Laravel, dan saya akan mewujudkan ide-ide Anda menjadi kenyataan. Sebagai mahasiswa semester akhir yang bersemangat dalam pengembangan web, saya fokus membangun aplikasi yang cepat, aman, dan ramah pengguna. Keahlian saya mencakup framework frontend seperti Next.js hingga solusi backend dengan Laravel, selalu mengikuti perkembangan teknologi web terbaru."
+                  text={`Halo semua! Jadi, cerita di balik portofolio ini sebenarnya berawal dari momen saya lagi gabut banget, haha. Di tengah kebosanan, saya pikir, "Daripada bengong, mending bikin sesuatu yang bisa ngegambarin apa yang saya suka dan bisa lakuin." Akhirnya, dengan semangat iseng tapi penuh harap, saya mulai merangkai portofolio ini dari nol. Saya coba tuangin ide-ide, keterampilan, dan sedikit kreativitas yang saya punya, meski jujur, prosesnya kadang bikin garuk-garuk kepala, hehe.
+
+Tapi, kalau boleh jujur lagi, saya sadar portofolio ini mungkin masih jauh dari kata "wow" atau malah bisa dibilang agak jelek di beberapa bagian. Maklum, saya masih belajar dan kadang masih suka trial-error. Jadi, kalau ada kekurangan atau bagian yang kurang enak dilihat, mohon banget dimaafkan, ya! 😅 Saya bener-bener terbuka buat masukan, kritik, atau bahkan kalau ada yang berkenan ngajarin biar portofolio ini bisa lebih rapi dan kece, saya bakal super senang dan antusias belajar. Makasih banyak atas pengertiannya, dan semoga portofolio sederhana ini bisa sedikit menghibur atau menginspirasi!`}
                   className="text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed"
                 />
               </div>
             </div>
-          </div> {/* End of flex container */}
-
+          </div>
         </div>
       </section>
 
       {/* New Section - My Skills */}
       <section id="skills" className="relative z-10 pt-16 pb-16 bg-black flex flex-col items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 flex flex-col items-center">
-
           {/* Central Content Area */}
           <div className="relative mb-12 flex justify-center items-center">
             {/* Background/Container for Skills button */}
@@ -306,11 +306,9 @@ export default function Home() {
 
           {/* Layout for Skill Items */}
           <div className="flex flex-col items-center w-full gap-8 relative z-[2]">
-            {/* List of Skills (placeholder) */}
-            {/* This will be replaced with a more dynamic list and components */}
+            {/* List of Skills */}
             <div className="w-full lg:w-2/3 flex flex-col gap-6">
-
-              {/* Contoh Skill Item dengan Persentase */}
+              {/* Skill Items */}
               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
                 <div className="flex items-center gap-4">
                   <SiNextdotjs size={30} className="text-white" />
@@ -319,7 +317,7 @@ export default function Home() {
                 <div className="text-white text-lg font-bold">30%</div>
               </div>
 
-               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
                 <div className="flex items-center gap-4">
                   <FaReact size={30} className="text-white" />
                   <span className="text-white text-lg font-semibold">React</span>
@@ -327,8 +325,7 @@ export default function Home() {
                 <div className="text-white text-lg font-bold">35%</div>
               </div>
 
-               {/* New Skill: ChatGPT */}
-               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
                 <div className="flex items-center gap-4">
                   <SiOpenai size={30} className="text-white" />
                   <span className="text-white text-lg font-semibold">ChatGPT</span>
@@ -336,7 +333,7 @@ export default function Home() {
                 <div className="text-white text-lg font-bold">100% hehehe</div>
               </div>
 
-               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
                 <div className="flex items-center gap-4">
                   <SiLaravel size={30} className="text-white" />
                   <span className="text-white text-lg font-semibold">Laravel</span>
@@ -344,19 +341,15 @@ export default function Home() {
                 <div className="text-white text-lg font-bold">80%</div>
               </div>
 
-               <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
+              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
                 <div className="flex items-center gap-4">
                   <SiPhp size={30} className="text-white" />
                   <span className="text-white text-lg font-semibold">PHP</span>
                 </div>
                 <div className="text-white text-lg font-bold">75%</div>
               </div>
-
-              {/* Tambahkan skill lain di sini sesuai kebutuhan */}
-
             </div>
           </div>
-
         </div>
       </section>
 
@@ -384,9 +377,9 @@ export default function Home() {
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseLeave}
-              style={{ willChange: 'scroll-position' }} // Hint browser untuk optimasi scroll
+              style={{ willChange: 'scroll-position' }}
             >
-              {/* Contoh penggunaan AnimatedPinDemo dengan gambar */}
+              {/* Project Cards */}
               <div className="flex-none w-80">
                 <AnimatedPinDemo
                   title="Project 1"
@@ -427,7 +420,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Additional Content - Contact Section */}
+
+      {/* Contact Section */}
       <section id="contact" ref={contactSectionRef} className="relative z-10 py-16 bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6">
           <AnimatedContent
@@ -444,47 +438,215 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
               {/* Left Side: Lanyard */}
               <div className="lg:col-span-6 flex justify-center items-center">
-                {/* Placeholder for Lanyard component */}
-                {/* Replace with actual Lanyard component when ready */}
-                <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+                <Lanyard 
+                  position={[0, 0, 20]} 
+                  gravity={[0, -40, 0]} 
+                  onVisibilityChange={(isVisible) => {
+                    // Optional: bisa ditambahkan efek tambahan saat lanyard terlihat/tidak
+                    console.log('Lanyard visibility:', isVisible);
+                  }}
+                />
               </div>
 
-              {/* Right Side: Contact Form */}
+              {/* Right Side: Social Media Links */}
               <div className="lg:col-span-6">
-                <div className="text-center lg:text-left mb-8">
-                  <h2 className="text-3xl sm:text-4xl font-bold">Contact Me</h2>
-                  <p className="text-gray-700 text-lg mt-4">
-                   Form ini masih ga guna cuman tampilan doang so sorry 
+                <div className="text-center lg:text-left mb-12">
+                  <h2 className="text-4xl sm:text-5xl font-bold mb-4">Let's Connect!</h2>
+                  <p className="text-gray-700 text-lg">
+                    Feel free to reach out through any of these platforms
                   </p>
                 </div>
-                <form className="flex flex-col gap-4">
-                  {/* Field untuk nama/email pengirim */}
-                  <input
-                    type="text" // Atau type="email" jika diinginkan
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black"
-                    placeholder="Nama atau Email Anda..."
-                  />
-                  {/* Textarea for message */}
-                  <textarea
-                    rows={6}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-black"
-                    placeholder="Pesan Anda..."
-                  ></textarea>
-                  {/* Submit button */}
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+
+                {/* Social Media Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Instagram */}
+                  <a 
+                    href="https://www.instagram.com/violetitumerah_/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 p-0.5 transition-all hover:scale-105"
                   >
-                    Kirim Pesan
-                  </button>
-                </form>
+                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 text-white">
+                        <FaInstagram className="h-6 w-6" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium text-gray-600">Instagram</span>
+                        <span className="text-lg font-semibold text-gray-900">@violetitumerah_</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a 
+                    href="https://wa.me/your_whatsapp_number" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-400 to-green-600 p-0.5 transition-all hover:scale-105"
+                  >
+                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-green-400 to-green-600 text-white">
+                        <FaWhatsapp className="h-6 w-6" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium text-gray-600">WhatsApp</span>
+                        <span className="text-lg font-semibold text-gray-900">+62 xxx-xxxx-xxxx</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Email */}
+                  <a 
+                    href="mailto:jauharalthaf@gmail.com" 
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 p-0.5 transition-all hover:scale-105"
+                  >
+                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 text-white">
+                        <FaEnvelope className="h-6 w-6" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium text-gray-600">Email</span>
+                        <span className="text-lg font-semibold text-gray-900">jauharalthaf@gmail.com</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* GitHub */}
+                  <a 
+                    href="https://github.com/Studentalthaf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700 to-gray-900 p-0.5 transition-all hover:scale-105"
+                  >
+                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 text-white">
+                        <FaGithub className="h-6 w-6" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-medium text-gray-600">GitHub</span>
+                        <span className="text-lg font-semibold text-gray-900">@Studentalthaf</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Additional Info */}
+                <div className="mt-8 text-center lg:text-left">
+                  <p className="text-gray-600">
+                    I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+                  </p>
+                </div>
               </div>
             </div>
           </AnimatedContent>
         </div>
       </section>
 
+      {/* Footer Section */}
+      <footer className="relative z-10 bg-black text-white py-12 border-t border-white/10">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Brand Section */}
+            <div className="flex flex-col items-center md:items-start">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                Moch Althaf Jauhar
+              </h3>
+              <p className="text-gray-400 text-sm text-center md:text-left">
+                Ngopi dulu, coding kemudian. 
+                Info ngopi? Kabari aja, gasss! ☕
+                info mendaki kabari saja, asal jangan 
+                info mountain date BAHAYA
+              </p>
+            </div>
 
+            {/* Quick Links */}
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-center md:text-left">
+                <li>
+                  <a href="#home" className="text-gray-400 hover:text-white transition-colors">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="flex flex-col items-center md:items-start">
+              <h4 className="text-lg font-semibold mb-4">Built With</h4>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                  <FaReact className="text-blue-400" />
+                  <span>React</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                  <SiNextdotjs className="text-white" />
+                  <span>Next.js</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                  <SiTypescript className="text-blue-500" />
+                  <span>TypeScript</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                  <FaCss3Alt className="text-blue-400" />
+                  <span>Tailwind</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-sm text-center md:text-left">
+                © {new Date().getFullYear()} Moch Althaf Jauhar. All rights reserved.
+              </p>
+              <div className="flex gap-4">
+                <a 
+                  href="https://www.instagram.com/violetitumerah_/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaInstagram className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://github.com/Studentalthaf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaGithub className="w-5 h-5" />
+                </a>
+                <a 
+                  href="mailto:jauharalthaf@gmail.com"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaEnvelope className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-4">
+              Made with ❤️ and lots of ☕
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
