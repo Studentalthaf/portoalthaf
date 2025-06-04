@@ -196,7 +196,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 w-full items-center text-center">
               <h1 className="text-7xl sm:text-8xl lg:text-9xl font-bold uppercase leading-tight tracking-wide">
                 <span className="block">MOCH</span>
-                <span className="block">ALTHAF</span>
+                <span className="block">ALT ....HAF</span>
                 <span className="block">JAUHAR</span>
               </h1>
 
@@ -613,9 +613,25 @@ Tapi, kalau boleh jujur lagi, saya sadar portofolio ini mungkin masih jauh dari 
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm text-center md:text-left">
-                © {new Date().getFullYear()} Moch Althaf Jauhar. All rights reserved.
-              </p>
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <p className="text-gray-400 text-sm text-center md:text-left">
+                  © {new Date().getFullYear()} Moch Althaf Jauhar. All rights reserved.
+                </p>
+                {/* Rotating Text */}
+                <div className="w-full md:w-auto">
+                  <RotatingText
+                    texts={[
+                      "Ngopi? Gasss! ☕",
+                      "Coding? Let's go! 💻",
+                      "Mountain date? No way! ⛰️",
+                      "Coffee date? Yes please! 🫖",
+                      "Debugging? After coffee! 🐛"
+                    ]}
+                    className="text-sm text-gray-400 font-medium"
+                    rotationInterval={3000}
+                  />
+                </div>
+              </div>
               <div className="flex gap-4">
                 <a 
                   href="https://www.instagram.com/violetitumerah_/" 
