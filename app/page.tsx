@@ -14,8 +14,8 @@ import TiltedCard from "./components/TiltedCard/TiltedCard";
 import TypingScrollText from "./components/TypingScrollText/TypingScrollText";
 import VariableProximity from "./components/VariableProximity/VariableProximity";
 import FallingText from "./components/FallingText/FallingText";
-import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiSass, SiDart, SiGraphql, SiOpenai } from 'react-icons/si';
-import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiSass, SiDart, SiGraphql, SiOpenai, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
+import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin, FaMicrosoft } from 'react-icons/fa';
 import Dock from './components/Dock/Dock';
 import { FaHome, FaUser, FaCode } from 'react-icons/fa';
 import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
@@ -23,7 +23,6 @@ import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
 const AnimatedPinDemo = dynamic(() => import('./components/ui/3d-pin').then(mod => mod.AnimatedPinDemo), { ssr: false });
 
 const Lanyard = dynamic(() => import("./components/Lanyard/Lanyard"), { ssr: false });
-const SplashCursor = dynamic(() => import("./components/SplashCursor/SplashCursor"), { ssr: false });
 const Particles = dynamic(() => import("./components/Particles/Particles"), { ssr: false });
 const ScrollVelocity = dynamic(() => import("./components/ScrollVelocity/ScrollVelocity"), { ssr: false });
 const CircularText = dynamic(() => import("./components/CircularText/CircularText"), { ssr: false });
@@ -111,7 +110,7 @@ export default function Home() {
     },
     {
       label: 'Projects',
-      href: '#projects',
+      href: '#my-projects',
       icon: <FaCode />
     },
     {
@@ -164,8 +163,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      <SplashCursor />
-
       {/* Replace navbar with Dock */}
       <Dock
         panelHeight={98}
@@ -178,19 +175,6 @@ export default function Home() {
 
       {/* Content - Landing Page */}
       <div className="relative z-10 container mx-auto min-h-screen flex items-center text-white pt-24 sm:pt-20 px-4 sm:px-6">
-        {/* Add Particles only in the top section */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <Particles
-            particleColors={["#ffffff", "#ffffff"]}
-            particleCount={500}
-            particleSpread={10}
-            speed={2}
-            particleBaseSize={150}
-            moveParticlesOnHover={true}
-            alphaParticles={true}
-            disableRotation={false}
-          />
-        </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 w-full gap-8 lg:gap-0">
           <div className="lg:col-span-12 flex items-center justify-center relative">
             <div className="flex flex-col gap-4 w-full items-center text-center">
@@ -203,7 +187,7 @@ export default function Home() {
               {/* Card melayang di tengah teks */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[80%]">
                 <TiltedCard
-                  imageSrc="/assets/lanyard/al.png"
+                  imageSrc="/assets/lanyard/al.webp"
                   containerHeight="100px"
                   containerWidth="100px"
                   imageHeight="150px"
@@ -223,7 +207,7 @@ export default function Home() {
       <section id="about" className="relative z-10 py-8 bg-black">
         <div className="container mx-auto px-4 sm:px-6">
           <ScrollVelocity
-            texts={['Althaf Jauhar', 'Gabut Doang']}
+            texts={['MOCH ALTHAF JAUHAR', 'SISTEM INFORMASI']}
             velocity={100}
             className="custom-scroll-text text-white"
           />
@@ -245,12 +229,13 @@ export default function Home() {
                 <PixelTransition
                   firstContent={
                     <Image
-                      src="/assets/lanyard/althaf.jpg"
+                      src="/assets/lanyard/alll.webp"
                       alt="Foto pribadi saya"
                       width={500}
                       height={500}
                       style={{ objectFit: "cover" }}
                       className="w-full h-full rounded-lg"
+                      loading="lazy"
                     />
                   }
                   secondContent={
@@ -274,16 +259,77 @@ export default function Home() {
                 />
               </div>
             </div>
-
             {/* Text Section - Now below the photo */}
             <div className="w-full">
-              <div className="mt-8 mx-auto" style={{ minHeight: '200px' }}>
-                <ScrollColorText
-                  text={`Halo semua! Jadi, cerita di balik portofolio ini sebenarnya berawal dari momen saya lagi gabut banget, haha. Di tengah kebosanan, saya pikir, "Daripada bengong, mending bikin sesuatu yang bisa ngegambarin apa yang saya suka dan bisa lakuin." Akhirnya, dengan semangat iseng tapi penuh harap, saya mulai merangkai portofolio ini dari nol. Saya coba tuangin ide-ide, keterampilan, dan sedikit kreativitas yang saya punya, meski jujur, prosesnya kadang bikin garuk-garuk kepala, hehe.
-
-Tapi, kalau boleh jujur lagi, saya sadar portofolio ini mungkin masih jauh dari kata "wow" atau malah bisa dibilang agak jelek di beberapa bagian. Maklum, saya masih belajar dan kadang masih suka trial-error. Jadi, kalau ada kekurangan atau bagian yang kurang enak dilihat, mohon banget dimaafkan, ya! 😅 Saya bener-bener terbuka buat masukan, kritik, atau bahkan kalau ada yang berkenan ngajarin biar portofolio ini bisa lebih rapi dan kece, saya bakal super senang dan antusias belajar. Makasih banyak atas pengertiannya, dan semoga portofolio sederhana ini bisa sedikit menghibur atau menginspirasi!`}
-                  className="text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed"
-                />
+              <p className="text-white text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed mt-8 mx-auto" style={{ minHeight: '200px' }}>
+                Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Section: Education & License */}
+      <section id="education-license" className="relative z-10 py-12 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-12">
+          {/* Kiri: Education Timeline */}
+          <div className="md:w-1/2 w-full">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">Education</h2>
+            <div className="relative border-l-4 border-blue-500 ml-4">
+              {/* SD */}
+              <div className="mb-10 ml-8 flex items-center group relative">
+                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
+                  <span className="text-white font-bold">1</span>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
+                  <h3 className="text-xl font-semibold text-white mb-1">SDN Penambangan</h3>
+                  <p className="text-gray-300 text-sm">Sekolah Dasar</p>
+                </div>
+              </div>
+              {/* SMP */}
+              <div className="mb-10 ml-8 flex items-center group relative">
+                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
+                  <span className="text-white font-bold">2</span>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
+                  <h3 className="text-xl font-semibold text-white mb-1">SMPN 1 Balongbendo</h3>
+                  <p className="text-gray-300 text-sm">Sekolah Menengah Pertama</p>
+                </div>
+              </div>
+              {/* SMA */}
+              <div className="mb-10 ml-8 flex items-center group relative">
+                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
+                  <span className="text-white font-bold">3</span>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
+                  <h3 className="text-xl font-semibold text-white mb-1">SMA UBP Amanatul Ummah</h3>
+                  <p className="text-gray-300 text-sm">Sekolah Menengah Atas</p>
+                </div>
+              </div>
+              {/* Kuliah */}
+              <div className="ml-8 flex items-center group relative">
+                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
+                  <span className="text-white font-bold">4</span>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
+                  <h3 className="text-xl font-semibold text-white mb-1">Sistem Informasi - UINSA</h3>
+                  <p className="text-gray-300 text-sm">Universitas Islam Negeri Sunan Ampel Surabaya</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Kanan: License Card Grid */}
+          <div className="md:w-1/2 w-full flex flex-col">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">Licenses & Certifications</h2>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg flex flex-col items-start">
+                <h3 className="text-xl font-semibold text-white mb-2">System Analyst</h3>
+                <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">BNSP</span>
+                <p className="text-gray-300 text-sm">Certified System Analyst by BNSP</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg flex flex-col items-start">
+                <h3 className="text-xl font-semibold text-white mb-2">Junior Computer Operator & Scientific Writing</h3>
+                <span className="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">Certification</span>
+                <p className="text-gray-300 text-sm">Junior Computer Operator & Scientific Writing</p>
               </div>
             </div>
           </div>
@@ -291,254 +337,214 @@ Tapi, kalau boleh jujur lagi, saya sadar portofolio ini mungkin masih jauh dari 
       </section>
 
       {/* New Section - My Skills */}
-      <section id="skills" className="relative z-10 pt-16 pb-16 bg-black flex flex-col items-center justify-center overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col items-center">
-          {/* Central Content Area */}
-          <div className="relative mb-12 flex justify-center items-center">
-            {/* Background/Container for Skills button */}
-            <div className="absolute inset-0 backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center opacity-70" style={{ width: '180px', height: '80px', transform: 'translate(-50%, -50%)', left: '50%', top: '50%' }}>
-              {/* Ini placeholder background untuk button Skills */}
+      <section id="skills" className="relative z-10 py-16 bg-black">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-4xl font-bold text-white mb-8 text-center">Skills</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* React Pemula */}
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+              <FaReact size={40} className="text-[#61dafb] mb-2" />
+              <span className="text-white text-lg font-semibold mb-1">React</span>
+              <span className="text-gray-400 text-sm">Basic</span>
             </div>
-            <h2 className="relative z-10 text-4xl sm:text-5xl font-bold text-white shiney-text appearance-none border-none bg-transparent p-0 cursor-pointer">
-              Skills
-            </h2>
-          </div>
-
-          {/* Layout for Skill Items */}
-          <div className="flex flex-col items-center w-full gap-8 relative z-[2]">
-            {/* List of Skills */}
-            <div className="w-full lg:w-2/3 flex flex-col gap-6">
-              {/* Skill Items */}
-              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <SiNextdotjs size={30} className="text-white" />
-                  <span className="text-white text-lg font-semibold">Next.js</span>
-                </div>
-                <div className="text-white text-lg font-bold">30%</div>
-              </div>
-
-              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <FaReact size={30} className="text-white" />
-                  <span className="text-white text-lg font-semibold">React</span>
-                </div>
-                <div className="text-white text-lg font-bold">35%</div>
-              </div>
-
-              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <SiOpenai size={30} className="text-white" />
-                  <span className="text-white text-lg font-semibold">ChatGPT</span>
-                </div>
-                <div className="text-white text-lg font-bold">100% hehehe</div>
-              </div>
-
-              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <SiLaravel size={30} className="text-white" />
-                  <span className="text-white text-lg font-semibold">Laravel</span>
-                </div>
-                <div className="text-white text-lg font-bold">80%</div>
-              </div>
-
-              <div className="flex items-center justify-between w-full p-4 bg-white/5 border border-white/10 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <SiPhp size={30} className="text-white" />
-                  <span className="text-white text-lg font-semibold">PHP</span>
-                </div>
-                <div className="text-white text-lg font-bold">75%</div>
-              </div>
+            {/* Next.js Basic */}
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/80 mb-2">
+                <SiNextdotjs size={32} className="text-black" />
+              </span>
+              <span className="text-white text-lg font-semibold mb-1">Next.js</span>
+              <span className="text-gray-400 text-sm">Basic</span>
+            </div>
+            {/* Laravel Menengah */}
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+              <SiLaravel size={40} className="text-[#ff2d20] mb-2" />
+              <span className="text-white text-lg font-semibold mb-1">Laravel</span>
+              <span className="text-gray-400 text-sm">Intermediate</span>
+            </div>
+            {/* PHP Intermediate */}
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+              <SiPhp size={40} className="text-[#777bb4] mb-2" />
+              <span className="text-white text-lg font-semibold mb-1">PHP</span>
+              <span className="text-gray-400 text-sm">Intermediate</span>
+            </div>
+            {/* Microsoft Mahir */}
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+              <FaMicrosoft size={40} className="text-[#0078D4] mb-2" />
+              <span className="text-white text-lg font-semibold mb-1">Microsoft</span>
+              <span className="text-gray-400 text-sm">Advance</span>
+            </div>
+            {/* Figma Menengah */}
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+              <SiFigma size={40} className="text-[#a259ff] mb-2" />
+              <span className="text-white text-lg font-semibold mb-1">Figma</span>
+              <span className="text-gray-400 text-sm">Intermediate</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* New Section - My Projects */}
-      <section id="my-projects" className="bg-black">
+      <section id="my-projects" className="bg-black py-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center text-white mb-4">
-            <h2 className="text-3xl sm:text-4xl font-bold">My Projects</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-wide">My Projects</h2>
           </div>
-          {/* Container utama untuk area scrollable dan indikator */}
-          <div className="relative flex items-center px-2 sm:px-4">
-            {/* Indikator/Tombol Kiri */}
-            <button
-              onClick={scrollLeft}
-              className="absolute left-0 z-20 h-full w-12 flex items-center justify-center bg-gradient-to-r from-black to-transparent text-white opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-              aria-label="Scroll Left"
-            >
-            </button>
-
-            {/* Container card proyek yang dapat digulir */}
-            <div
-              ref={projectContainerRef}
-              className="flex flex-nowrap justify-start gap-16 overflow-x-auto pb-8 scrollbar-hide w-full cursor-grab px-1 transition-transform duration-300 ease-out"
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseLeave}
-              style={{ willChange: 'scroll-position' }}
-            >
-              {/* Project Cards */}
-              <div className="flex-none w-80">
-                <AnimatedPinDemo
-                  title="Project 1"
-                  href="https://github.com/Studentalthaf"
-                  imageSrc="https://picsum.photos/seed/project1/600/400"
-                />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Card 1: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp1.webp" className="object-cover w-full h-full" alt="Website Company" />
               </div>
-              <div className="flex-none w-80">
-                <AnimatedPinDemo
-                  title="Project 2"
-                  href="https://github.com/Studentalthaf"
-                  imageSrc="https://picsum.photos/seed/project2/600/400"
-                />
-              </div>
-              <div className="flex-none w-80">
-                <AnimatedPinDemo
-                  title="Project 3"
-                  href="https://github.com/Studentalthaf"
-                  imageSrc="https://picsum.photos/seed/project3/600/400"
-                />
-              </div>
-              <div className="flex-none w-80">
-                <AnimatedPinDemo
-                  title="Project 4"
-                  href="https://github.com/Studentalthaf"
-                  imageSrc="https://picsum.photos/seed/project4/600/400"
-                />
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2">WEBSITE COMPANY</h3>
+                <p className="text-gray-400 text-sm mb-4">SEBUAH WEBSITE PERUSAHAAN COFFEETIME (CAFE)</p>
+                <div className="flex gap-3 mt-2">
+                  <FaHtml5 size={24} className="text-[#e34c26]" />
+                  <FaCss3Alt size={24} className="text-[#1572b6]" />
+                  <SiJavascript size={24} className="text-[#f7df1e]" />
+                </div>
               </div>
             </div>
 
-            {/* Indikator/Tombol Kanan */}
-            <button
-              onClick={scrollRight}
-              className="absolute right-0 z-20 h-full w-12 flex items-center justify-center bg-gradient-to-l from-black to-transparent text-white opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-              aria-label="Scroll Right"
-            >
-            </button>
+            {/* Card 2: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp2.webp" className="object-cover w-full h-full" alt="Analis dan Visualisasi Data" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2">Analis dan Visualisasi Data</h3>
+                <p className="text-gray-400 text-sm mb-4">merupakan visualisasi data passing grade UTBK jurusan IPA perguruan tinggi negeri pada tahun 2019</p>
+                <div className="flex gap-3 mt-2">
+                  <SiPython size={24} className="text-[#3776ab]" />
+                </div>
+              </div>
+            </div>
+            {/* Card 3: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp3.webp" className="object-cover w-full h-full" alt="Klasifikasi Makanan Indonesia" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2">Klasifikasi Makanan Indonesia</h3>
+                <p className="text-gray-400 text-sm mb-4">Training Data Gambar Makanan Indonesia</p>
+                <div className="flex gap-3 mt-2">
+                  <SiGooglecolab size={24} className="text-[#F9AB00]" />
+                </div>
+              </div>
+            </div>
+            {/* Card 4: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp5.webp" className="object-cover w-full h-full" alt="UINSAFOOD" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2">UINSAFOOD</h3>
+                <p className="text-gray-400 text-sm mb-4">Website Catering yang dikembangan oleh PUSBIS yang akan digunakan oleh internal kampus</p>
+                <div className="flex gap-3 mt-2">
+                  <SiLaravel size={24} className="text-[#ff2d20]" />
+                  <SiPhp size={24} className="text-[#777bb4]" />
+                  <FaHtml5 size={24} className="text-[#e34c26]" />
+                  <SiJavascript size={24} className="text-[#f7df1e]" />
+                  <FaCss3Alt size={24} className="text-[#1572b6]" />
+                </div>
+              </div>
+            </div>
+            {/* Card 5: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp4.webp" className="object-cover w-full h-full" alt="WEB QRCODE GENERATOR" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2"> WEB QRCODE GENERATOR</h3>
+                <p className="text-gray-400 text-sm mb-4">Website pembuatan QRcode yang berisikan data mahasiswa yang digunakan untuk validasi keaslian</p>
+                <div className="flex gap-3 mt-2">
+                  <SiLaravel size={24} className="text-[#ff2d20]" />
+                  <SiPhp size={24} className="text-[#777bb4]" />
+                  <FaHtml5 size={24} className="text-[#e34c26]" />
+                  <FaCss3Alt size={24} className="text-[#1572b6]" />
+                </div>
+              </div>
+            </div>
+            {/* Card 6: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp6.webp" className="object-cover w-full h-full" alt="QR Code Website with Data Encryption" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2">QR Code Website with Data Encryption</h3>
+                <p className="text-gray-400 text-sm mb-4">Web aplikasi pembuatan sertifikat dengan pemanfaatan QRcoode yang menginplementasikan algoritma kriptografi ChaCha20 Poly-1305</p>
+                <div className="flex gap-3 mt-2">
+                  <SiLaravel size={24} className="text-[#ff2d20]" />
+                  <SiPhp size={24} className="text-[#777bb4]" />
+                  <FaHtml5 size={24} className="text-[#e34c26]" />
+                  <FaCss3Alt size={24} className="text-[#1572b6]" />
+                  <SiJavascript size={24} className="text-[#f7df1e]" />
+                  <FaReact size={24} className="text-[#61dafb]" />
+                </div>
+              </div>
+            </div>
+            {/* Card 7: Gambar di atas, judul & deskripsi di bawah */}
+            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
+              <div className="w-full h-48 overflow-hidden flex-shrink-0">
+                <img src="/assets/lanyard/mp7.webp" className="object-cover w-full h-full" alt="UI DESIGN & REDESAIN WEB" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <h3 className="text-xl font-bold text-white mb-2">UI DESIGN & REDESAIN WEB</h3>
+                <p className="text-gray-400 text-sm mb-4">UI Design Watre Tracker dan Redesain Website SI</p>
+                <div className="flex gap-3 mt-2">
+                  <SiFigma size={24} className="text-[#a259ff]" />
+                </div>
+              </div>
+            </div>
+
+   
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" ref={contactSectionRef} className="relative z-10 py-16 bg-gray-100 text-black">
+      <section id="contact" ref={contactSectionRef} className="relative z-10 py-16 bg-gradient-to-br from-gray-100 via-white to-gray-200 text-black">
         <div className="container mx-auto px-4 sm:px-6">
-          <AnimatedContent
-            distance={150}
-            direction="vertical"
-            reverse={false}
-            config={{ tension: 80, friction: 20 }}
-            initialOpacity={0.2}
-            animateOpacity
-            scale={1.1}
-            threshold={0.2}
-          >
-            {/* Grid Container */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-              {/* Left Side: Lanyard */}
-              <div className="lg:col-span-6 flex justify-center items-center">
-                <Lanyard 
-                  position={[0, 0, 20]} 
-                  gravity={[0, -40, 0]} 
-                  onVisibilityChange={(isVisible) => {
-                    // Optional: bisa ditambahkan efek tambahan saat lanyard terlihat/tidak
-                    console.log('Lanyard visibility:', isVisible);
-                  }}
-                />
-              </div>
-
-              {/* Right Side: Social Media Links */}
-              <div className="lg:col-span-6">
-                <div className="text-center lg:text-left mb-12">
-                  <h2 className="text-4xl sm:text-5xl font-bold mb-4">Let's Connect!</h2>
-                  <p className="text-gray-700 text-lg">
-                    Feel free to reach out through any of these platforms
-                  </p>
-                </div>
-
-                {/* Social Media Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left: Lanyard 3D */}
+            <div className="flex justify-center items-center">
+              <Lanyard 
+                position={[0, 0, 20]} 
+                gravity={[0, -40, 0]} 
+                onVisibilityChange={(isVisible) => {
+                  // Optional: efek tambahan saat lanyard terlihat/tidak
+                }}
+              />
+            </div>
+            {/* Right: Modern Contact Card */}
+            <div className="flex flex-col gap-8 items-center md:items-start">
+              <div className="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/20 w-full max-w-md">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-gray-900">Let's Connect!</h2>
+                <p className="text-gray-700 text-base mb-6">Feel free to reach out through any of these platforms or send me an email. I'm open for collaboration and new opportunities!</p>
+                <div className="flex flex-col gap-4">
                   {/* Instagram */}
-                  <a 
-                    href="https://www.instagram.com/violetitumerah_/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 p-0.5 transition-all hover:scale-105"
-                  >
-                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 text-white">
-                        <FaInstagram className="h-6 w-6" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-medium text-gray-600">Instagram</span>
-                        <span className="text-lg font-semibold text-gray-900">@violetitumerah_</span>
-                      </div>
-                    </div>
+                  <a href="https://www.instagram.com/violetitumerah_/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
+                    <FaInstagram className="w-7 h-7" /> Instagram
                   </a>
-
                   {/* WhatsApp */}
-                  <a 
-                    href="https://wa.me/your_whatsapp_number" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-400 to-green-600 p-0.5 transition-all hover:scale-105"
-                  >
-                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-green-400 to-green-600 text-white">
-                        <FaWhatsapp className="h-6 w-6" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-medium text-gray-600">WhatsApp</span>
-                        <span className="text-lg font-semibold text-gray-900">+62 xxx-xxxx-xxxx</span>
-                      </div>
-                    </div>
+                  <a href="https://wa.me/your_whatsapp_number" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
+                    <FaWhatsapp className="w-7 h-7" /> WhatsApp
                   </a>
-
                   {/* Email */}
-                  <a 
-                    href="mailto:jauharalthaf@gmail.com" 
-                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 p-0.5 transition-all hover:scale-105"
-                  >
-                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 text-white">
-                        <FaEnvelope className="h-6 w-6" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-medium text-gray-600">Email</span>
-                        <span className="text-lg font-semibold text-gray-900">jauharalthaf@gmail.com</span>
-                      </div>
-                    </div>
+                  <a href="mailto:jauharalthaf@gmail.com" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
+                    <FaEnvelope className="w-7 h-7" /> jauharalthaf@gmail.com
                   </a>
-
                   {/* GitHub */}
-                  <a 
-                    href="https://github.com/Studentalthaf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700 to-gray-900 p-0.5 transition-all hover:scale-105"
-                  >
-                    <div className="relative flex items-center gap-4 rounded-xl bg-white p-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 text-white">
-                        <FaGithub className="h-6 w-6" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-medium text-gray-600">GitHub</span>
-                        <span className="text-lg font-semibold text-gray-900">@Studentalthaf</span>
-                      </div>
-                    </div>
+                  <a href="https://github.com/Studentalthaf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
+                    <FaGithub className="w-7 h-7" /> GitHub
                   </a>
                 </div>
-
-                {/* Additional Info */}
-                <div className="mt-8 text-center lg:text-left">
-                  <p className="text-gray-600">
-                    I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
-                  </p>
+                <div className="mt-8">
+                  <a href="mailto:jauharalthaf@gmail.com" className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg shadow-lg hover:scale-105 transition-transform">Email Me</a>
                 </div>
               </div>
             </div>
-          </AnimatedContent>
+          </div>
         </div>
       </section>
 
@@ -548,117 +554,69 @@ Tapi, kalau boleh jujur lagi, saya sadar portofolio ini mungkin masih jauh dari 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand Section */}
             <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
                 Moch Althaf Jauhar
               </h3>
-              <p className="text-gray-400 text-sm text-center md:text-left">
-                Ngopi dulu, coding kemudian. 
-                Info ngopi? Kabari aja, gasss! ☕
-                info mendaki kabari saja, asal jangan 
-                info mountain date BAHAYA
-              </p>
+              <p className="text-gray-400 text-base mb-2">Web Developer & Data Enthusiast</p>
+              <p className="text-gray-500 text-sm">Sistem Informasi Graduate</p>
             </div>
-
             {/* Quick Links */}
             <div className="flex flex-col items-center md:items-start">
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-center md:text-left">
                 <li>
-                  <a href="#home" className="text-gray-400 hover:text-white transition-colors">
-                    Home
-                  </a>
+                  <a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
                 </li>
                 <li>
-                  <a href="#about" className="text-gray-400 hover:text-white transition-colors">
-                    About
-                  </a>
+                  <a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a>
                 </li>
                 <li>
-                  <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
-                    Projects
-                  </a>
+                  <a href="#my-projects" className="text-gray-400 hover:text-white transition-colors">Projects</a>
                 </li>
                 <li>
-                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                    Contact
-                  </a>
+                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
                 </li>
               </ul>
             </div>
-
-            {/* Tech Stack */}
-            <div className="flex flex-col items-center md:items-start">
-              <h4 className="text-lg font-semibold mb-4">Built With</h4>
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-                  <FaReact className="text-blue-400" />
-                  <span>React</span>
+            {/* Tech Stack & Social */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Tech Stack</h4>
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                  <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <FaReact className="text-blue-400" />
+                    <span>React</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <SiNextdotjs className="text-white" />
+                    <span>Next.js</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <FaCss3Alt className="text-blue-400" />
+                    <span>Tailwind</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-                  <SiNextdotjs className="text-white" />
-                  <span>Next.js</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-                  <SiTypescript className="text-blue-500" />
-                  <span>TypeScript</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-                  <FaCss3Alt className="text-blue-400" />
-                  <span>Tailwind</span>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4 mt-4 md:mt-0">Find Me</h4>
+                <div className="flex gap-4">
+                  <a href="https://www.instagram.com/violetitumerah_/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                    <FaInstagram className="w-5 h-5" />
+                  </a>
+                  <a href="https://github.com/Studentalthaf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                    <FaGithub className="w-5 h-5" />
+                  </a>
+                  <a href="mailto:jauharalthaf@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                    <FaEnvelope className="w-5 h-5" />
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-
           {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex flex-col items-center md:items-start gap-2">
-                <p className="text-gray-400 text-sm text-center md:text-left">
-                  © {new Date().getFullYear()} Moch Althaf Jauhar. All rights reserved.
-                </p>
-                {/* Rotating Text */}
-                <div className="w-full md:w-auto">
-                  <RotatingText
-                    texts={[
-                      "Ngopi? Gasss! ☕",
-                      "Coding? Let's go! 💻",
-                      "Mountain date? No way! ⛰️",
-                      "Coffee date? Yes please! 🫖",
-                      "Debugging? After coffee! 🐛"
-                    ]}
-                    className="text-sm text-gray-400 font-medium"
-                    rotationInterval={3000}
-                  />
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <a 
-                  href="https://www.instagram.com/violetitumerah_/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <FaInstagram className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://github.com/Studentalthaf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <FaGithub className="w-5 h-5" />
-                </a>
-                <a 
-                  href="mailto:jauharalthaf@gmail.com"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <FaEnvelope className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-            <p className="text-center text-gray-500 text-sm mt-4">
-              Made with ❤️ and lots of ☕
+          <div className="mt-12 pt-8 border-t border-white/10 text-center">
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Moch Althaf Jauhar. All rights reserved.
             </p>
           </div>
         </div>

@@ -25,6 +25,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
     "tailwind-merge": "^3.3.0",
     "three": "^0.167.1"
   },
