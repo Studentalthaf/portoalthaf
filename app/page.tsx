@@ -14,10 +14,9 @@ import TiltedCard from "./components/TiltedCard/TiltedCard";
 import TypingScrollText from "./components/TypingScrollText/TypingScrollText";
 import VariableProximity from "./components/VariableProximity/VariableProximity";
 import FallingText from "./components/FallingText/FallingText";
-import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiSass, SiDart, SiGraphql, SiOpenai, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
-import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin, FaMicrosoft } from 'react-icons/fa';
+import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
+import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaMicrosoft, FaHome, FaUser, FaCode } from 'react-icons/fa';
 import Dock from './components/Dock/Dock';
-import { FaHome, FaUser, FaCode } from 'react-icons/fa';
 import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
 // Import komponen AnimatedPinDemo secara dinamis
 const AnimatedPinDemo = dynamic(() => import('./components/ui/3d-pin').then(mod => mod.AnimatedPinDemo), { ssr: false });
