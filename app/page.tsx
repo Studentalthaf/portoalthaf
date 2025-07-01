@@ -393,7 +393,7 @@ export default function Home() {
             {/* Card 1: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp1.webp" className="object-cover w-full h-full" alt="Website Company" />
+                <Image src="/assets/lanyard/mp1.webp" alt="Website Company" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2">WEBSITE COMPANY</h3>
@@ -409,7 +409,7 @@ export default function Home() {
             {/* Card 2: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp2.webp" className="object-cover w-full h-full" alt="Analis dan Visualisasi Data" />
+                <Image src="/assets/lanyard/mp2.webp" alt="Analis dan Visualisasi Data" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2">Analis dan Visualisasi Data</h3>
@@ -422,7 +422,7 @@ export default function Home() {
             {/* Card 3: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp3.webp" className="object-cover w-full h-full" alt="Klasifikasi Makanan Indonesia" />
+                <Image src="/assets/lanyard/mp3.webp" alt="Klasifikasi Makanan Indonesia" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2">Klasifikasi Makanan Indonesia</h3>
@@ -435,7 +435,7 @@ export default function Home() {
             {/* Card 4: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp5.webp" className="object-cover w-full h-full" alt="UINSAFOOD" />
+                <Image src="/assets/lanyard/mp5.webp" alt="UINSAFOOD" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2">UINSAFOOD</h3>
@@ -452,7 +452,7 @@ export default function Home() {
             {/* Card 5: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp4.webp" className="object-cover w-full h-full" alt="WEB QRCODE GENERATOR" />
+                <Image src="/assets/lanyard/mp4.webp" alt="WEB QRCODE GENERATOR" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2"> WEB QRCODE GENERATOR</h3>
@@ -468,7 +468,7 @@ export default function Home() {
             {/* Card 6: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp6.webp" className="object-cover w-full h-full" alt="QR Code Website with Data Encryption" />
+                <Image src="/assets/lanyard/mp6.webp" alt="QR Code Website with Data Encryption" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2">QR Code Website with Data Encryption</h3>
@@ -486,7 +486,7 @@ export default function Home() {
             {/* Card 7: Gambar di atas, judul & deskripsi di bawah */}
             <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
               <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <img src="/assets/lanyard/mp7.webp" className="object-cover w-full h-full" alt="UI DESIGN & REDESAIN WEB" />
+                <Image src="/assets/lanyard/mp7.webp" alt="UI DESIGN & REDESAIN WEB" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <h3 className="text-xl font-bold text-white mb-2">UI DESIGN & REDESAIN WEB</h3>
@@ -523,12 +523,12 @@ export default function Home() {
                 <p className="text-gray-700 text-base mb-6">Feel free to reach out through any of these platforms or send me an email. I'm open for collaboration and new opportunities!</p>
                 <div className="flex flex-col gap-4">
                   {/* Instagram */}
-                  <a href="https://www.instagram.com/violetitumerah_/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
-                    <FaInstagram className="w-7 h-7" /> Instagram
+                  <a href="https://www.instagram.com/_alauhar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
+                    <FaInstagram className="w-7 h-7" /> @_alauhar
                   </a>
                   {/* WhatsApp */}
-                  <a href="https://wa.me/your_whatsapp_number" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
-                    <FaWhatsapp className="w-7 h-7" /> WhatsApp
+                  <a href="https://wa.me/081556442718" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
+                    <FaWhatsapp className="w-7 h-7" /> 081556442718
                   </a>
                   {/* Email */}
                   <a href="mailto:jauharalthaf@gmail.com" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
