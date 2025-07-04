@@ -248,7 +248,7 @@ export default function Home() {
                       }}
                       className="rounded-lg"
                     >
-                      <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>it's Somewhere I Go When I Need To Remember Your Face!</p>
+                      <p style={{ fontWeight: 100, fontSize: "2rem", color: "#ffffff" }}>MOCH ALTHAF JAUHAR</p>
                     </div>
                   }
                   gridSize={12}
