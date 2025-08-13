@@ -18,6 +18,7 @@ import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiPython, Si
 import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaMicrosoft, FaHome, FaUser, FaCode } from 'react-icons/fa';
 import Dock from './components/Dock/Dock';
 import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
+import SectionReveal from "./components/SectionReveal/SectionReveal";
 // Import komponen AnimatedPinDemo secara dinamis
 const AnimatedPinDemo = dynamic(() => import('./components/ui/3d-pin').then(mod => mod.AnimatedPinDemo), { ssr: false });
 
@@ -126,26 +127,18 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Jika Contact Section sepenuhnya terlihat (atau sebagian besar, tergantung threshold)
-        // set isDockDark menjadi true, jika tidak false.
-        // Kita mungkin perlu menyesuaikan threshold agar sesuai dengan posisi Dock di bagian bawah.
-        // Entry.isIntersecting mendeteksi apakah elemen masuk viewport sama sekali.
-        // Entry.intersectionRatio adalah persentase elemen yang terlihat.
+       
         if (entry.isIntersecting) {
-          // Check if a significant portion of the contact section is visible
-          // This assumes the dock is at the bottom, so when the contact section enters the bottom part of the viewport,
-          // we want the dock to become dark.
-          // A threshold of 0.5 means when 50% of the element is visible, trigger the callback.
-          // We might need to refine this logic based on where the Dock is fixed.
+         
           setIsDockDark(true);
         } else {
           setIsDockDark(false);
         }
       },
       {
-        root: null, // Menggunakan viewport sebagai root
-        rootMargin: '0px', // Tanpa margin tambahan
-        threshold: 0.1, // Trigger ketika 10% dari elemen terlihat
+        root: null, 
+        rootMargin: '10px', 
+        threshold: 0.1, 
       }
     );
 
@@ -203,7 +196,7 @@ export default function Home() {
       </div>
 
       {/* Additional Content - About Section */}
-      <section id="about" className="relative z-10 py-8 bg-black">
+      <SectionReveal as="section" id="about" className="relative z-10 py-8 bg-black">
         <div className="container mx-auto px-4 sm:px-6">
           <ScrollVelocity
             texts={['MOCH ALTHAF JAUHAR', 'SISTEM INFORMASI']}
@@ -211,10 +204,10 @@ export default function Home() {
             className="custom-scroll-text text-white"
           />
         </div>
-      </section>
+      </SectionReveal>
 
       {/* Additional Content - Projects Section */}
-      <section id="projects" className="relative z-10 pt-10 pb-1 lg:pb-0 bg-black container mx-auto min-h-screen">
+      <SectionReveal as="section" id="projects" className="relative z-10 pt-10 pb-1 lg:pb-0 bg-black container mx-auto min-h-screen" amount={0.15}>
         <div className="container mx-auto px-4 sm:px-6">
 
           {/* Flex container for layout */}
@@ -266,9 +259,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
       {/* Section: Education & License */}
-      <section id="education-license" className="relative z-10 py-12 bg-black">
+      <SectionReveal as="section" id="education-license" className="relative z-10 py-12 bg-black" amount={0.2}>
         <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-12">
           {/* Kiri: Education Timeline */}
           <div className="md:w-1/2 w-full">
@@ -333,10 +326,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* New Section - My Skills */}
-      <section id="skills" className="relative z-10 py-16 bg-black">
+      <SectionReveal as="section" id="skills" className="relative z-10 py-16 bg-black" amount={0.2}>
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-4xl font-bold text-white mb-8 text-center">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -380,10 +373,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* New Section - My Projects */}
-      <section id="my-projects" className="bg-black py-16">
+      <SectionReveal as="section" id="my-projects" className="bg-black py-16" amount={0.15}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-wide">My Projects</h2>
@@ -499,10 +492,10 @@ export default function Home() {
    
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* Contact Section */}
-      <section id="contact" ref={contactSectionRef} className="relative z-10 py-16 bg-gradient-to-br from-gray-100 via-white to-gray-200 text-black">
+      <SectionReveal as="section" id="contact" ref={contactSectionRef as any} className="relative z-10 py-16 bg-gradient-to-br from-gray-100 via-white to-gray-200 text-black" amount={0.2}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left: Lanyard 3D */}
@@ -511,7 +504,7 @@ export default function Home() {
                 position={[0, 0, 20]} 
                 gravity={[0, -40, 0]} 
                 onVisibilityChange={(isVisible) => {
-                  // Optional: efek tambahan saat lanyard terlihat/tidak
+             
                 }}
               />
             </div>
@@ -545,7 +538,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* Footer Section */}
       <footer className="relative z-10 bg-black text-white py-12 border-t border-white/10">
