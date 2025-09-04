@@ -3,17 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import RotatingText from "./components/RotatingText/RotatingText";
-import SplitText from "./components/SplitText/SplitText";
-import BlurText from "./components/BlurText/BlurText";
-import Hyperspeed from "./components/Hyperspeed/Hyperspeed";
-import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
-import GradientText from "./components/GradientText/GradientText";
-import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
+
 import TiltedCard from "./components/TiltedCard/TiltedCard";
-import TypingScrollText from "./components/TypingScrollText/TypingScrollText";
-import VariableProximity from "./components/VariableProximity/VariableProximity";
-import FallingText from "./components/FallingText/FallingText";
+
 import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
 import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaMicrosoft, FaHome, FaUser, FaCode } from 'react-icons/fa';
 import Dock from './components/Dock/Dock';
@@ -23,9 +15,9 @@ import SectionReveal from "./components/SectionReveal/SectionReveal";
 const AnimatedPinDemo = dynamic(() => import('./components/ui/3d-pin').then(mod => mod.AnimatedPinDemo), { ssr: false });
 
 const Lanyard = dynamic(() => import("./components/Lanyard/Lanyard"), { ssr: false });
-const Particles = dynamic(() => import("./components/Particles/Particles"), { ssr: false });
+
 const ScrollVelocity = dynamic(() => import("./components/ScrollVelocity/ScrollVelocity"), { ssr: false });
-const CircularText = dynamic(() => import("./components/CircularText/CircularText"), { ssr: false });
+
 const PixelTransition = dynamic(() => import("./components/PixelTransition/PixelTransition"), { ssr: false });
 
 export default function Home() {
