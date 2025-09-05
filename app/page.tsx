@@ -257,63 +257,157 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-12">
           {/* Kiri: Education Timeline */}
           <div className="md:w-1/2 w-full">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">Education</h2>
-            <div className="relative border-l-4 border-blue-500 ml-4">
-              {/* SD */}
-              <div className="mb-10 ml-8 flex items-center group relative">
-                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
-                  <span className="text-white font-bold">1</span>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
-                  <h3 className="text-xl font-semibold text-white mb-1">SDN Penambangan</h3>
-                  <p className="text-gray-300 text-sm">Sekolah Dasar</p>
-                </div>
+            <div className="relative px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 bg-clip-text text-transparent">
+                  Education Journey
+                </h2>
               </div>
-              {/* SMP */}
-              <div className="mb-10 ml-8 flex items-center group relative">
-                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
-                  <span className="text-white font-bold">2</span>
+
+              <div className="relative max-w-3xl mx-auto">
+                {/* Timeline Line */}
+                <div className="absolute left-4 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 glow"></div>
+
+                {/* SD */}
+                <div className="group relative mb-12">
+                  <div className="flex items-center">
+                    <div className="absolute left-0 flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-sm font-bold">1</span>
+                      </div>
+                    </div>
+                    <div className="flex-1 ml-16">
+                      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="relative">
+                          <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-500/20 text-blue-400 rounded-full mb-2">2009 - 2015</span>
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">SDN Penambangan</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
-                  <h3 className="text-xl font-semibold text-white mb-1">SMPN 1 Balongbendo</h3>
-                  <p className="text-gray-300 text-sm">Sekolah Menengah Pertama</p>
+
+                {/* SMP */}
+                <div className="group relative mb-12">
+                  <div className="flex items-center">
+                    <div className="absolute left-0 flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-sm font-bold">2</span>
+                      </div>
+                    </div>
+                    <div className="flex-1 ml-16">
+                      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="relative">
+                          <span className="inline-block px-3 py-1 text-sm font-semibold bg-purple-500/20 text-purple-400 rounded-full mb-2">2015 - 2018</span>
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">SMPN 1 Balongbendo</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              {/* SMA */}
-              <div className="mb-10 ml-8 flex items-center group relative">
-                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
-                  <span className="text-white font-bold">3</span>
+
+                {/* SMA */}
+                <div className="group relative mb-12">
+                  <div className="flex items-center">
+                    <div className="absolute left-0 flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-red-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-sm font-bold">3</span>
+                      </div>
+                    </div>
+                    <div className="flex-1 ml-16">
+                      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-pink-500/10 to-red-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="relative">
+                          <span className="inline-block px-3 py-1 text-sm font-semibold bg-pink-500/20 text-pink-400 rounded-full mb-2">2018 - 2021</span>
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">SMA UBP Amanatul Ummah</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
-                  <h3 className="text-xl font-semibold text-white mb-1">SMA UBP Amanatul Ummah</h3>
-                  <p className="text-gray-300 text-sm">Sekolah Menengah Atas</p>
-                </div>
-              </div>
-              {/* Kuliah */}
-              <div className="ml-8 flex items-center group relative">
-                <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-4 border-black group-hover:bg-blue-600 transition-colors z-10">
-                  <span className="text-white font-bold">4</span>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg w-full">
-                  <h3 className="text-xl font-semibold text-white mb-1">Sistem Informasi - UINSA</h3>
-                  <p className="text-gray-300 text-sm">Universitas Islam Negeri Sunan Ampel Surabaya</p>
+
+                {/* Kuliah */}
+                <div className="group relative">
+                  <div className="flex items-center">
+                    <div className="absolute left-0 flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-orange-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-sm font-bold">4</span>
+                      </div>
+                    </div>
+                    <div className="flex-1 ml-16">
+                      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="relative">
+                          <span className="inline-block px-3 py-1 text-sm font-semibold bg-red-500/20 text-red-400 rounded-full mb-2">2021 - 2025</span>
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">Sistem Informasi - UINSA</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           {/* Kanan: License Card Grid */}
           <div className="md:w-1/2 w-full flex flex-col">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">Licenses & Certifications</h2>
-            <div className="grid grid-cols-1 gap-6">
-              <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg flex flex-col items-start">
-                <h3 className="text-xl font-semibold text-white mb-2">System Analyst</h3>
-                <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">BNSP</span>
-                <p className="text-gray-300 text-sm">Certified System Analyst by BNSP</p>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-8">
+              Licenses & Certifications
+            </h2>
+            <div className="space-y-6">
+              {/* System Analyst Card */}
+              <div className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.02]">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">System Analyst</h3>
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                          BNSP
+                        </span>
+                      </div>
+                      <p className="text-gray-400 mt-2">Certified System Analyst by BNSP</p>
+                      <div className="mt-4 flex gap-2">
+                        <span className="px-2 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs">Professional</span>
+                        <span className="px-2 py-1 rounded-md bg-purple-500/10 text-purple-400 text-xs">2023</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="bg-white/5 border border-white/10 rounded-lg p-6 shadow-lg flex flex-col items-start">
-                <h3 className="text-xl font-semibold text-white mb-2">Junior Computer Operator & Scientific Writing</h3>
-                <span className="inline-block bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">Certification</span>
-                <p className="text-gray-300 text-sm">Junior Computer Operator & Scientific Writing</p>
+
+              {/* Junior Computer Operator Card */}
+              <div className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.02]">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <h3 className="text-xl font-bold bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">Junior Computer Operator</h3>
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-green-500 to-teal-600 text-white">
+                          Certification
+                        </span>
+                      </div>
+                      <p className="text-gray-400 mt-2">Junior Computer Operator & Scientific Writing</p>
+                      <div className="mt-4 flex gap-2">
+                        <span className="px-2 py-1 rounded-md bg-green-500/10 text-green-400 text-xs">Technical</span>
+                        <span className="px-2 py-1 rounded-md bg-teal-500/10 text-teal-400 text-xs">2022</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -370,114 +464,288 @@ export default function Home() {
       {/* New Section - My Projects */}
       <SectionReveal as="section" id="my-projects" className="bg-black py-16" amount={0.15}>
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-wide">My Projects</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-wide mb-4">
+              My Projects
+            </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {/* Card 1: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp1.webp" alt="Website Company" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2">WEBSITE COMPANY</h3>
-                <p className="text-gray-400 text-sm mb-4">SEBUAH WEBSITE PERUSAHAAN COFFEETIME (CAFE)</p>
-                <div className="flex gap-3 mt-2">
-                  <FaHtml5 size={24} className="text-[#e34c26]" />
-                  <FaCss3Alt size={24} className="text-[#1572b6]" />
-                  <SiJavascript size={24} className="text-[#f7df1e]" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1: Website Company */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-purple-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp1.webp"
+                      alt="Website Company"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                      WEBSITE COMPANY
+                    </h3>
+                    <p className="text-gray-400 text-sm">SEBUAH WEBSITE PERUSAHAAN COFFEETIME (CAFE)</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex gap-3 items-center">
+                      <FaHtml5 size={20} className="text-[#e34c26] transition-transform hover:scale-110" />
+                      <FaCss3Alt size={20} className="text-[#1572b6] transition-transform hover:scale-110" />
+                      <SiJavascript size={20} className="text-[#f7df1e] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-400 backdrop-blur-md">
+                  Web Development
+                </span>
               </div>
             </div>
 
-            {/* Card 2: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp2.webp" alt="Analis dan Visualisasi Data" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2">Analis dan Visualisasi Data</h3>
-                <p className="text-gray-400 text-sm mb-4">merupakan visualisasi data passing grade UTBK jurusan IPA perguruan tinggi negeri pada tahun 2019</p>
-                <div className="flex gap-3 mt-2">
-                  <SiPython size={24} className="text-[#3776ab]" />
+            {/* Card 2: Data Analysis */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-blue-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp2.webp"
+                      alt="Analis dan Visualisasi Data"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      Analis dan Visualisasi Data
+                    </h3>
+                    <p className="text-gray-400 text-sm">Visualisasi data passing grade UTBK jurusan IPA perguruan tinggi negeri pada tahun 2019</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex gap-3 items-center">
+                      <SiPython size={20} className="text-[#3776ab] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-400 backdrop-blur-md">
+                  Data Analysis
+                </span>
               </div>
             </div>
-            {/* Card 3: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp3.webp" alt="Klasifikasi Makanan Indonesia" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2">Klasifikasi Makanan Indonesia</h3>
-                <p className="text-gray-400 text-sm mb-4">Training Data Gambar Makanan Indonesia</p>
-                <div className="flex gap-3 mt-2">
-                  <SiGooglecolab size={24} className="text-[#F9AB00]" />
+
+            {/* Card 3: AI/ML */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-yellow-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp3.webp"
+                      alt="Klasifikasi Makanan Indonesia"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                      Klasifikasi Makanan Indonesia
+                    </h3>
+                    <p className="text-gray-400 text-sm">Training Data Gambar Makanan Indonesia menggunakan Machine Learning</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex gap-3 items-center">
+                      <SiGooglecolab size={20} className="text-[#F9AB00] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-yellow-500/20 text-yellow-400 backdrop-blur-md">
+                  Machine Learning
+                </span>
               </div>
             </div>
-            {/* Card 4: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp5.webp" alt="UINSAFOOD" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2">UINSAFOOD</h3>
-                <p className="text-gray-400 text-sm mb-4">Website Catering yang dikembangan oleh PUSBIS yang akan digunakan oleh internal kampus</p>
-                <div className="flex gap-3 mt-2">
-                  <SiLaravel size={24} className="text-[#ff2d20]" />
-                  <SiPhp size={24} className="text-[#777bb4]" />
-                  <FaHtml5 size={24} className="text-[#e34c26]" />
-                  <SiJavascript size={24} className="text-[#f7df1e]" />
-                  <FaCss3Alt size={24} className="text-[#1572b6]" />
+
+            {/* Card 4: Full Stack */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-red-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-pink-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp5.webp"
+                      alt="UINSAFOOD"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">
+                      UINSAFOOD
+                    </h3>
+                    <p className="text-gray-400 text-sm">Website Catering yang dikembangan oleh PUSBIS yang akan digunakan oleh internal kampus</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-3 items-center">
+                      <SiLaravel size={20} className="text-[#ff2d20] transition-transform hover:scale-110" />
+                      <SiPhp size={20} className="text-[#777bb4] transition-transform hover:scale-110" />
+                      <FaHtml5 size={20} className="text-[#e34c26] transition-transform hover:scale-110" />
+                      <SiJavascript size={20} className="text-[#f7df1e] transition-transform hover:scale-110" />
+                      <FaCss3Alt size={20} className="text-[#1572b6] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-500/20 text-red-400 backdrop-blur-md">
+                  Full Stack
+                </span>
               </div>
             </div>
-            {/* Card 5: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp4.webp" alt="WEB QRCODE GENERATOR" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2"> WEB QRCODE GENERATOR</h3>
-                <p className="text-gray-400 text-sm mb-4">Website pembuatan QRcode yang berisikan data mahasiswa yang digunakan untuk validasi keaslian</p>
-                <div className="flex gap-3 mt-2">
-                  <SiLaravel size={24} className="text-[#ff2d20]" />
-                  <SiPhp size={24} className="text-[#777bb4]" />
-                  <FaHtml5 size={24} className="text-[#e34c26]" />
-                  <FaCss3Alt size={24} className="text-[#1572b6]" />
+            {/* Card 5: Web Development */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-green-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp4.webp"
+                      alt="WEB QRCODE GENERATOR"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
+                      WEB QRCODE GENERATOR
+                    </h3>
+                    <p className="text-gray-400 text-sm">Website pembuatan QRcode yang berisikan data mahasiswa yang digunakan untuk validasi keaslian</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-3 items-center">
+                      <SiLaravel size={20} className="text-[#ff2d20] transition-transform hover:scale-110" />
+                      <SiPhp size={20} className="text-[#777bb4] transition-transform hover:scale-110" />
+                      <FaHtml5 size={20} className="text-[#e34c26] transition-transform hover:scale-110" />
+                      <FaCss3Alt size={20} className="text-[#1572b6] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-400 backdrop-blur-md">
+                  Web Development
+                </span>
               </div>
             </div>
-            {/* Card 6: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp6.webp" alt="QR Code Website with Data Encryption" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2">QR Code Website with Data Encryption</h3>
-                <p className="text-gray-400 text-sm mb-4">Web aplikasi pembuatan sertifikat dengan pemanfaatan QRcoode yang menginplementasikan algoritma kriptografi ChaCha20 Poly-1305</p>
-                <div className="flex gap-3 mt-2">
-                  <SiLaravel size={24} className="text-[#ff2d20]" />
-                  <SiPhp size={24} className="text-[#777bb4]" />
-                  <FaHtml5 size={24} className="text-[#e34c26]" />
-                  <FaCss3Alt size={24} className="text-[#1572b6]" />
-                  <SiJavascript size={24} className="text-[#f7df1e]" />
-                  <FaReact size={24} className="text-[#61dafb]" />
+
+            {/* Card 6: Full Stack + Security */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-indigo-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp6.webp"
+                      alt="QR Code Website with Data Encryption"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                      QR Code with Data Encryption
+                    </h3>
+                    <p className="text-gray-400 text-sm">Web aplikasi pembuatan sertifikat dengan QRcode yang mengimplementasikan algoritma kriptografi ChaCha20 Poly-1305</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-3 items-center">
+                      <SiLaravel size={20} className="text-[#ff2d20] transition-transform hover:scale-110" />
+                      <SiPhp size={20} className="text-[#777bb4] transition-transform hover:scale-110" />
+                      <FaHtml5 size={20} className="text-[#e34c26] transition-transform hover:scale-110" />
+                      <FaCss3Alt size={20} className="text-[#1572b6] transition-transform hover:scale-110" />
+                      <SiJavascript size={20} className="text-[#f7df1e] transition-transform hover:scale-110" />
+                      <FaReact size={20} className="text-[#61dafb] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-400 backdrop-blur-md">
+                  Full Stack + Security
+                </span>
               </div>
             </div>
-            {/* Card 7: Gambar di atas, judul & deskripsi di bawah */}
-            <div className="bg-neutral-900 rounded-xl overflow-hidden flex flex-col shadow-lg hover:scale-[1.03] transition-transform">
-              <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                <Image src="/assets/lanyard/mp7.webp" alt="UI DESIGN & REDESAIN WEB" width={400} height={192} className="object-cover w-full h-full" loading="lazy" />
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <h3 className="text-xl font-bold text-white mb-2">UI DESIGN & REDESAIN WEB</h3>
-                <p className="text-gray-400 text-sm mb-4">UI Design Watre Tracker dan Redesain Website SI</p>
-                <div className="flex gap-3 mt-2">
-                  <SiFigma size={24} className="text-[#a259ff]" />
+
+            {/* Card 7: UI/UX Design */}
+            <div className="group relative bg-neutral-900/50 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-pink-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-rose-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col h-full">
+                <div className="w-full h-48 overflow-hidden">
+                  <div className="relative w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                    <Image
+                      src="/assets/lanyard/mp7.webp"
+                      alt="UI DESIGN & REDESAIN WEB"
+                      width={400}
+                      height={192}
+                      className="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  </div>
                 </div>
+                <div className="p-6 flex-1 flex flex-col justify-between backdrop-blur-sm">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">
+                      UI DESIGN & REDESAIN WEB
+                    </h3>
+                    <p className="text-gray-400 text-sm">UI Design Water Tracker dan Redesain Website SI dengan fokus pada pengalaman pengguna</p>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <div className="flex gap-3 items-center">
+                      <SiFigma size={20} className="text-[#a259ff] transition-transform hover:scale-110" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-pink-500/20 text-pink-400 backdrop-blur-md">
+                  UI/UX Design
+                </span>
               </div>
             </div>
 
