@@ -165,7 +165,7 @@ export default function Home() {
               <h1 className="text-7xl sm:text-8xl lg:text-9xl font-bold uppercase leading-tight tracking-wide">
                 <span className="block">MOCH</span>
                 <span className="block">ALT ....HAF</span>
-                <span className="block">JAUHAR</span>
+                <span className="block">JAUHARRRRRRR</span>
               </h1>
 
               {/* Card melayang di tengah teks */}
