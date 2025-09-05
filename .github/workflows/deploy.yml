@@ -1,0 +1,54 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main  # Deploy when pushing to main branch
+  workflow_dispatch:    # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          
+      - name: Deploy to VPS
+        env:
+          DEPLOY_PATH: /usr/src/www/portoalthaf
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+        run: |
+          # Sync the build files to VPS
+          rsync -avz --delete \
+            .next \
+            node_modules \
+            public \
+            package.json \
+            package-lock.json \
+            next.config.* \
+            ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:$DEPLOY_PATH/
+
+          # Restart the application on VPS
+          ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "cd $DEPLOY_PATH && pm2 restart portoalthaf || pm2 start npm --name portoalthaf -- start"
