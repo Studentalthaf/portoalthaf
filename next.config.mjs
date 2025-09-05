@@ -3,14 +3,10 @@ const nextConfig = {
   // Enable standalone output for Docker
   output: 'standalone',
   
-  // Disable telemetry
-  telemetry: false,
-  
+
   // Experimental features
   experimental: {
-    // Enable app directory features
-    appDir: true,
-    
+
     // Optimize package imports
     optimizePackageImports: ['@react-spring/web', 'framer-motion', 'gsap'],
   },
