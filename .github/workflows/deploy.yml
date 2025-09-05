@@ -40,8 +40,11 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
-          # Sync the build files to VPS
-          rsync -avz --delete \
+          echo "Testing SSH connection..."
+          ssh -v ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "pwd"
+          
+          echo "Starting rsync..."
+          rsync -avvz --delete \
             .next \
             node_modules \
             public \
