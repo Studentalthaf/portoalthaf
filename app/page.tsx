@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import TiltedCard from "./components/TiltedCard/TiltedCard";
-
+import TextType from "./components/TextType/TextType";
 import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
 import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaMicrosoft, FaHome, FaUser, FaCode } from 'react-icons/fa';
 import Dock from './components/Dock/Dock';
@@ -119,18 +119,18 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-       
+
         if (entry.isIntersecting) {
-         
+
           setIsDockDark(true);
         } else {
           setIsDockDark(false);
         }
       },
       {
-        root: null, 
-        rootMargin: '10px', 
-        threshold: 0.1, 
+        root: null,
+        rootMargin: '10px',
+        threshold: 0.1,
       }
     );
 
@@ -245,9 +245,15 @@ export default function Home() {
             </div>
             {/* Text Section - Now below the photo */}
             <div className="w-full">
-              <p className="text-white text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed mt-8 mx-auto" style={{ minHeight: '200px' }}>
-                Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu.
-              </p>
+                <TextType 
+                  className="text-white text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed mt-8 mx-auto"
+                  text={["Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu."]}
+                  typingSpeed={20}
+                  pauseDuration={100}
+                  showCursor={true}
+                  cursorCharacter="||"
+                />
+
             </div>
           </div>
         </div>
@@ -749,7 +755,7 @@ export default function Home() {
               </div>
             </div>
 
-   
+
           </div>
         </div>
       </SectionReveal>
@@ -760,11 +766,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left: Lanyard 3D */}
             <div className="flex justify-center items-center">
-              <Lanyard 
-                position={[0, 0, 20]} 
-                gravity={[0, -40, 0]} 
+              <Lanyard
+                position={[0, 0, 20]}
+                gravity={[0, -40, 0]}
                 onVisibilityChange={(isVisible) => {
-             
+
                 }}
               />
             </div>
