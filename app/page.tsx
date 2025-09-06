@@ -245,14 +245,18 @@ export default function Home() {
             </div>
             {/* Text Section - Now below the photo */}
             <div className="w-full">
-                <TextType 
-                  className="text-white text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed mt-8 mx-auto"
-                  text={["Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu."]}
-                  typingSpeed={20}
-                  pauseDuration={100}
-                  showCursor={true}
-                  cursorCharacter="||"
-                />
+              <TextType
+                className="text-white text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed mt-8 mx-auto"
+                text={[
+                  "Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu."
+                ]}
+                typingSpeed={30}
+                pauseDuration={2000}
+                showCursor={true}
+                cursorCharacter="|"
+                variableSpeed={false}   // tambahkan ini
+                onSentenceComplete={() => { }} // tambahkan ini (callback opsional)
+              />
 
             </div>
           </div>
