@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import TiltedCard from "./components/TiltedCard/TiltedCard";
+import ContactForm from "./components/ContactForm/ContactForm";
 import TextType from "./components/TextType/TextType";
 import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
 import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaMicrosoft, FaHome, FaUser, FaCode } from 'react-icons/fa';
@@ -250,7 +251,7 @@ export default function Home() {
                 text={[
                   "Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu."
                 ]}
-                typingSpeed={30}
+                typingSpeed={3}
                 pauseDuration={2000}
                 showCursor={true}
                 cursorCharacter="|"
@@ -760,6 +761,56 @@ export default function Home() {
             </div>
 
 
+          </div>
+        </div>
+      </SectionReveal>
+
+      {/* Contact Form Section */}
+      <SectionReveal as="section" id="contact-form" className="relative z-10 py-16 bg-gradient-to-br from-gray-900 via-black to-gray-800" amount={0.2}>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent tracking-wide mb-4">
+                Get In Touch
+              </h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                Punya project menarik? Mari berkolaborasi! Isi form di bawah dan pesan Anda akan langsung terkirim ke WhatsApp saya.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Contact Info */}
+              <div className="space-y-8">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
+                  <h3 className="text-2xl font-bold text-white mb-4">Kenapa Memilih Saya?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                      <p className="text-gray-300">Berpengalaman dalam pengembangan web modern</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                      <p className="text-gray-300">Respon cepat dan komunikasi yang baik</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                      <p className="text-gray-300">Siap berkolaborasi untuk hasil terbaik</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
+                  <h4 className="text-xl font-bold text-white mb-3">Hubungi Langsung</h4>
+                  <div className="flex items-center gap-3">
+                    <FaWhatsapp className="text-green-500 text-2xl" />
+                    <span className="text-gray-300 font-medium">+62 815-5644-2718</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right: Contact Form */}
+              <ContactForm />
+            </div>
           </div>
         </div>
       </SectionReveal>
