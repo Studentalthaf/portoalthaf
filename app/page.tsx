@@ -7,8 +7,29 @@ import Image from "next/image";
 import TiltedCard from "./components/TiltedCard/TiltedCard";
 import ContactForm from "./components/ContactForm/ContactForm";
 import TextType from "./components/TextType/TextType";
-import { SiNextdotjs, SiTypescript, SiJavascript, SiLaravel, SiPhp, SiPython, SiGooglecolab, SiFigma } from 'react-icons/si';
-import { FaReact, FaHtml5, FaCss3Alt, FaInstagram, FaWhatsapp, FaEnvelope, FaGithub, FaMicrosoft, FaHome, FaUser, FaCode } from 'react-icons/fa';
+import { 
+  FaReact, 
+  FaInstagram, 
+  FaWhatsapp, 
+  FaEnvelope, 
+  FaGithub, 
+  FaMicrosoft, 
+  FaHome, 
+  FaUser, 
+  FaCode,
+  FaHtml5,
+  FaCss3Alt 
+} from 'react-icons/fa';
+
+import { 
+  SiNextdotjs, 
+  SiJavascript, 
+  SiLaravel, 
+  SiPhp, 
+  SiFigma,
+  SiPython,
+  SiGooglecolab 
+} from 'react-icons/si';
 import Dock from './components/Dock/Dock';
 import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
 import SectionReveal from "./components/SectionReveal/SectionReveal";
@@ -172,7 +193,7 @@ export default function Home() {
               {/* Card melayang di tengah teks */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[80%]">
                 <TiltedCard
-                  imageSrc="/assets/lanyard/al.webp"
+                  imageSrc="/assets/lanyard/foto.jpeg"
                   containerHeight="100px"
                   containerWidth="100px"
                   imageHeight="150px"
@@ -249,7 +270,7 @@ export default function Home() {
               <TextType
                 className="text-white text-lg sm:text-xl md:text-2xl font-medium text-justify leading-relaxed mt-8 mx-auto"
                 text={[
-                  "Saya Moch Althaf Jauhar, lulusan Sistem Informasi yang memiliki minat besar di bidang pengembangan web dan teknologi digital. Berpengalaman dalam membangun aplikasi web modern dengan pendekatan kreatif, kolaboratif, dan berorientasi pada solusi. Saya memiliki pengalaman menggunakan framework Laravel dan sangat suka mencoba hal-hal baru di dunia teknologi. Saya selalu antusias untuk belajar hal baru dan siap berkontribusi dalam tim maupun proyek individu."
+                  "I'm Moch Althaf Jauhar, an Information Systems graduate with a passion for web development and digital technology. I'm experienced in building modern web applications with a creative, collaborative, and solution-oriented approach. I'm experienced with the Laravel framework and love exploring new things in the technology world. I'm always eager to learn new things and am ready to contribute to both teams and individual projects."
                 ]}
                 typingSpeed={3}
                 pauseDuration={2000}
@@ -270,7 +291,7 @@ export default function Home() {
           <div className="md:w-1/2 w-full">
             <div className="relative px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 bg-clip-text text-transparent">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white">
                   Education Journey
                 </h2>
               </div>
@@ -279,53 +300,10 @@ export default function Home() {
                 {/* Timeline Line */}
                 <div className="absolute left-4 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 glow"></div>
 
-                {/* SD */}
-                <div className="group relative mb-12">
-                  <div className="flex items-center">
-                    <div className="absolute left-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-white text-sm font-bold">1</span>
-                      </div>
-                    </div>
-                    <div className="flex-1 ml-16">
-                      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative">
-                          <span className="inline-block px-3 py-1 text-sm font-semibold bg-blue-500/20 text-blue-400 rounded-full mb-2">2009 - 2015</span>
-                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">SDN Penambangan</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* SMP */}
-                <div className="group relative mb-12">
-                  <div className="flex items-center">
-                    <div className="absolute left-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-white text-sm font-bold">2</span>
-                      </div>
-                    </div>
-                    <div className="flex-1 ml-16">
-                      <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative">
-                          <span className="inline-block px-3 py-1 text-sm font-semibold bg-purple-500/20 text-purple-400 rounded-full mb-2">2015 - 2018</span>
-                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">SMPN 1 Balongbendo</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 {/* SMA */}
                 <div className="group relative mb-12">
                   <div className="flex items-center">
                     <div className="absolute left-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-red-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-white text-sm font-bold">3</span>
-                      </div>
                     </div>
                     <div className="flex-1 ml-16">
                       <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
@@ -343,9 +321,6 @@ export default function Home() {
                 <div className="group relative">
                   <div className="flex items-center">
                     <div className="absolute left-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-orange-600 rounded-full border-4 border-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-white text-sm font-bold">4</span>
-                      </div>
                     </div>
                     <div className="flex-1 ml-16">
                       <div className="relative p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-white/10">
@@ -363,7 +338,7 @@ export default function Home() {
           </div>
           {/* Kanan: License Card Grid */}
           <div className="md:w-1/2 w-full flex flex-col">
-            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
               Licenses & Certifications
             </h2>
             <div className="space-y-6">
@@ -425,48 +400,321 @@ export default function Home() {
         </div>
       </SectionReveal>
 
+      {/* Work Experience Section */}
+      <SectionReveal as="section" id="experience" className="relative z-10 py-16 bg-black" amount={0.2}>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-wide mb-4">
+              Work Experience
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              My professional journey and contributions in the tech industry
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            {/* Experience Cards */}
+            <div className="space-y-8">
+              {/* Experience 1 */}
+              <div className="group relative bg-neutral-900/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-orange-500/50">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="md:w-1/4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-orange-500/20 text-orange-400 mb-3">
+                        Jan 2024 - Jun 2024
+                      </span>
+                      <h3 className="text-2xl font-bold text-white mb-2">IT KORDINATOR</h3>
+                      <p className="text-orange-400 font-semibold">PUSBIS UINSA</p>
+                    </div>
+                    <div className="md:w-3/4">
+                      <div className="space-y-4">
+                        <p className="text-gray-300">
+                          Full-stack Developer, developing and maintaining web applications for internal university systems, focusing on modern and efficient solutions.
+                        </p>
+                        <ul className="space-y-2 text-gray-400">
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3"></span>
+                            Developed UINSAFOOD, a catering management system for internal campus use
+                          </li>
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></span>
+                            Implemented secure authentication and user management systems
+                          </li>
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3"></span>
+                            Optimized database queries and improved application performance
+                          </li>
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3"></span>
+                            Frontend-Backend Integration
+                          </li>
+                        </ul>
+                        <div className="flex flex-wrap gap-2 pt-4">
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">Laravel</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">MySQL</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">PHP</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">JavaScript</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience 2 */}
+              <div className="group relative bg-neutral-900/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-blue-500/50">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="md:w-1/4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-blue-500/20 text-blue-400 mb-3">
+                        Okt 2024 - Nov 2024
+                      </span>
+                      <h3 className="text-2xl font-bold text-white mb-2">IT Support</h3>
+                      <p className="text-blue-400 font-semibold">Quantum HRM International</p>
+                    </div>
+                    <div className="md:w-3/4">
+                      <div className="space-y-4">
+                        <p className="text-gray-300">
+                          Served as a key member of the 2024 Civil Servant (CPNS) administrative selection team for the Attorney General's Office, responsible for verifying thousands of application files, ensuring data accuracy, and maintaining the integrity of the intake process.
+                        </p>
+                        <ul className="space-y-2 text-gray-400">
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></span>
+                            Attorney General's Office CPNS Recruitment Team 2024
+                          </li>
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3"></span>
+                            Analysis and Data Entry of Psychological Test Results
+                          </li>
+                        </ul>
+                        <div className="flex flex-wrap gap-2 pt-4">
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">Data Analyst</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">Data Entry</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 hover:bg-white/10 transition-colors">Support</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience 3 */}
+              <div className="group relative bg-neutral-900/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-green-500/50">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="md:w-1/4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-green-500/20 text-green-400 mb-3">
+                        Jul 2025 - Agu 2025
+                      </span>
+                      <h3 className="text-2xl font-bold text-white mb-2">Session Host and Facilitator</h3>
+                      <p className="text-green-400 font-semibold">Quantum HRM International</p>
+                    </div>
+                    <div className="md:w-3/4">
+                      <div className="space-y-4">
+                        <p className="text-gray-300">
+                          Served as the primary host and facilitator for the Ministry of Health's regional assessment program, tasked with identifying and evaluating potential employees from across Eastern Indonesia.
+                        </p>
+                        <ul className="space-y-2 text-gray-400">
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                            Facilitated Leaderless Group Discussion (LGD) sessions and conducted competency-based interviews to objectively assess candidate potential.
+                          </li>
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3"></span>
+                            MC for the event
+                          </li>
+                        </ul>
+                        <div className="flex flex-wrap gap-2 pt-4">
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Public Speaking</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Facilitation</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Assessment</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Event Management</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience 4 */}
+              <div className="group relative bg-neutral-900/50 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-yellow-500/50">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 via-yellow-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="md:w-1/4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-yellow-500/20 text-yellow-400 mb-3">
+                        Agu 2025 - Sep 2025
+                      </span>
+                      <h3 className="text-2xl font-bold text-white mb-2">IT Helpdesk (Online Assessment Support Specialist)</h3>
+                      <p className="text-yellow-400 font-semibold">Quantum HRM International</p>
+                    </div>
+                    <div className="md:w-3/4">
+                      <div className="space-y-4">
+                        <p className="text-gray-300">
+                          Delivered critical remote technical support for a large-scale online assessment program conducted by Quantum HRM for the Ministry of Health. My primary responsibility was to ensure a seamless and stable technical experience for hundreds of remote candidates and assessors across Eastern Indonesia.
+                        </p>
+                        <ul className="space-y-2 text-gray-400">
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                            Facilitated Leaderless Group Discussion (LGD) sessions and conducted competency-based interviews to objectively assess candidate potential.
+                          </li>
+                          <li className="flex items-start">
+                            <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></span>
+                             Served as the main technical point of contact via live chat and helpdesk channels, rapidly resolving candidate issues such as login errors, browser compatibility, and network problems.
+                          </li>
+                        </ul>
+                        <div className="flex flex-wrap gap-2 pt-4">
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Remote Technical Support</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Online Assessment Platforms</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Live Chat Support</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">System Monitoring</span>
+                          <span className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300">Problem Solving</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionReveal>
+
       {/* New Section - My Skills */}
       <SectionReveal as="section" id="skills" className="relative z-10 py-16 bg-black" amount={0.2}>
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="text-4xl font-bold text-white mb-8 text-center">Skills</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* React Pemula */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-              <FaReact size={40} className="text-[#61dafb] mb-2" />
-              <span className="text-white text-lg font-semibold mb-1">React</span>
-              <span className="text-gray-400 text-sm">Basic</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">Skills</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            {/* Hard Skills */}
+            <div>
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4 text-center lg:text-left">Hard Skills</h3>
+                <div className="w-full h-px bg-white/20"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* Web Development Skills */}
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-white mb-6">Web Development</h4>
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <FaReact className="w-6 h-6 text-[#61dafb]" />
+                      <span className="text-white">React.js</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <SiNextdotjs className="w-6 h-6 text-white" />
+                      <span className="text-white">Next.js</span>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <SiLaravel className="w-6 h-6 text-[#ff2d20]" />
+                      <span className="text-white">Laravel</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <SiPhp className="w-6 h-6 text-[#777bb4]" />
+                      <span className="text-white">PHP</span>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <SiJavascript className="w-6 h-6 text-[#F7DF1E]" />
+                      <span className="text-white">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tools */}
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-white mb-6">Tools</h4>
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <SiFigma className="w-6 h-6 text-[#a259ff]" />
+                      <span className="text-white">Figma</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <FaMicrosoft className="w-6 h-6 text-[#0078D4]" />
+                      <span className="text-white">Microsoft Office</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Database */}
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-white mb-6">Database</h4>
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <span className="w-6 h-6 text-white">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0C5.372 0 0 2.688 0 6v12c0 3.312 5.372 6 12 6s12-2.688 12-6V6c0-3.312-5.372-6-12-6zm0 2c6.075 0 10 2.239 10 4s-3.925 4-10 4S2 7.761 2 6s3.925-4 10-4z"/>
+                        </svg>
+                      </span>
+                      <span className="text-white">MySQL</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <span className="w-6 h-6 text-white">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0C5.372 0 0 2.688 0 6v12c0 3.312 5.372 6 12 6s12-2.688 12-6V6c0-3.312-5.372-6-12-6zm0 2c6.075 0 10 2.239 10 4s-3.925 4-10 4S2 7.761 2 6s3.925-4 10-4z"/>
+                        </svg>
+                      </span>
+                      <span className="text-white">PostgreSQL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* Next.js Basic */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/80 mb-2">
-                <SiNextdotjs size={32} className="text-black" />
-              </span>
-              <span className="text-white text-lg font-semibold mb-1">Next.js</span>
-              <span className="text-gray-400 text-sm">Basic</span>
-            </div>
-            {/* Laravel Menengah */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-              <SiLaravel size={40} className="text-[#ff2d20] mb-2" />
-              <span className="text-white text-lg font-semibold mb-1">Laravel</span>
-              <span className="text-gray-400 text-sm">Intermediate</span>
-            </div>
-            {/* PHP Intermediate */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-              <SiPhp size={40} className="text-[#777bb4] mb-2" />
-              <span className="text-white text-lg font-semibold mb-1">PHP</span>
-              <span className="text-gray-400 text-sm">Intermediate</span>
-            </div>
-            {/* Microsoft Mahir */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-              <FaMicrosoft size={40} className="text-[#0078D4] mb-2" />
-              <span className="text-white text-lg font-semibold mb-1">Microsoft</span>
-              <span className="text-gray-400 text-sm">Advance</span>
-            </div>
-            {/* Figma Menengah */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-              <SiFigma size={40} className="text-[#a259ff] mb-2" />
-              <span className="text-white text-lg font-semibold mb-1">Figma</span>
-              <span className="text-gray-400 text-sm">Intermediate</span>
+
+            {/* Soft Skills */}
+            <div className="group">
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold text-white mb-4 text-center lg:text-left">Soft Skills</h3>
+                <div className="w-full h-1 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-full"></div>
+              </div>
+
+              <div className="space-y-6">
+                {/* Problem Solving */}
+                <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-green-500/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                  <div className="relative">
+                    <div className="flex justify-between items-center mb-4">
+                      <h4 className="text-xl font-bold text-white">Problem Solving</h4>
+                      <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Advanced</span>
+                    </div>
+                    <p className="text-gray-400">Ability to analyze complex problems and develop effective solutions through critical thinking and systematic approach.</p>
+                  </div>
+                </div>
+
+                {/* Team Collaboration */}
+                <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-teal-500/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-cyan-500/10 to-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                  <div className="relative">
+                    <div className="flex justify-between items-center mb-4">
+                      <h4 className="text-xl font-bold text-white">Team Collaboration</h4>
+                      <span className="px-3 py-1 bg-teal-500/20 text-teal-400 rounded-full text-sm">Excellent</span>
+                    </div>
+                    <p className="text-gray-400">Strong ability to work in teams, communicate effectively, and contribute to collective goals while maintaining positive relationships.</p>
+                  </div>
+                </div>
+
+                {/* Time Management */}
+                <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-sky-500/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                  <div className="relative">
+                    <div className="flex justify-between items-center mb-4">
+                      <h4 className="text-xl font-bold text-white">Time Management</h4>
+                      <span className="px-3 py-1 bg-sky-500/20 text-sky-400 rounded-full text-sm">Proficient</span>
+                    </div>
+                    <p className="text-gray-400">Efficient in organizing tasks, meeting deadlines, and balancing multiple projects while maintaining high quality standards.</p>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -770,19 +1018,18 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent tracking-wide mb-4">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-wide mb-4">
                 Get In Touch
               </h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                 Punya project menarik? Mari berkolaborasi! Isi form di bawah dan pesan Anda akan langsung terkirim ke WhatsApp saya.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left: Contact Info */}
               <div className="space-y-8">
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">Kenapa Memilih Saya?</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
@@ -798,17 +1045,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
-                  <h4 className="text-xl font-bold text-white mb-3">Hubungi Langsung</h4>
-                  <div className="flex items-center gap-3">
-                    <FaWhatsapp className="text-green-500 text-2xl" />
-                    <span className="text-gray-300 font-medium">+62 815-5644-2718</span>
-                  </div>
-                </div>
               </div>
-              
-              {/* Right: Contact Form */}
               <ContactForm />
             </div>
           </div>
