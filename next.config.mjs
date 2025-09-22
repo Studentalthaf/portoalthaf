@@ -3,6 +3,12 @@ const nextConfig = {
   // Enable standalone output for Docker
   output: 'standalone',
   
+  // Configure build cache
+  distDir: '.next',
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
+  },
+  
 
   // Experimental features
   experimental: {
