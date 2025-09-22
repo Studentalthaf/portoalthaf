@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://althaf.site/sitemap.xml
+
+# Common crawl optimizations
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /_error
+Disallow: /404
+Disallow: /500
+
+# Rate limiting for specific bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Allow Google to crawl JavaScript
+User-agent: Googlebot
+Allow: /*.js$
+Allow: /*.css$
+
+# Allow Google Mobile to crawl JavaScript
+User-agent: Googlebot-Mobile
+Allow: /*.js$
+Allow: /*.css$
+
+# Allow Google Image
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /public/
+Disallow: /_next/

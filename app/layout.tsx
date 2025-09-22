@@ -13,6 +13,13 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const viewport = {
+  themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Moch. Althaf Jauhar | Web Developer Portfolio",
   description: "Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel. Spesialisasi dalam pengembangan web modern dan responsif.",
@@ -34,13 +41,13 @@ export const metadata: Metadata = {
     ],
     locale: 'id_ID',
     type: 'website',
-    countryName: 'Indonesia',
+    countryName: 'Indonesia'
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Moch. Althaf Jauhar | Web Developer Portfolio',
     description: 'Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel.',
-    images: ['https://althaf.site/assets/lanyard/althaf.png'],
+    images: ['https://althaf.site/assets/lanyard/althaf.png']
   },
   robots: {
     index: true,
@@ -50,35 +57,70 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+      'max-snippet': -1
+    }
   },
   verification: {
-    google: 'wiHei6tAWFPPYs-DfPz8JFJkxJbq3M3RXIAYoKYBDfI', 
+    google: 'wiHei6tAWFPPYs-DfPz8JFJkxJbq3M3RXIAYoKYBDfI'
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/app/favicon.ico', sizes: 'any' },
       { url: '/as.ico', sizes: 'any' }
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/app/favicon.ico',
     apple: [
       { url: '/assets/lanyard/althaf.png' }
     ],
     other: [
       {
         rel: 'mask-icon',
-        url: '/favicon.ico',
-      },
-    ],
+        url: '/app/favicon.ico'
+      }
+    ]
   },
-  manifest: '/site.webmanifest',
-  themeColor: '#000000',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
+  manifest: '/site.webmanifest'
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Moch. Althaf Jauhar",
+  "url": "https://althaf.site",
+  "image": "https://althaf.site/assets/lanyard/althaf.png",
+  "sameAs": [
+    "https://github.com/Studentalthaf",
+    "https://www.instagram.com/_alauhar"
+  ],
+  "jobTitle": "Web Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
   },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ID",
+    "addressRegion": "Indonesia"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Universitas Negeri Malang"
+  },
+  "description": "Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel.",
+  "knowsAbout": [
+    "React.js",
+    "Next.js",
+    "Laravel",
+    "PHP",
+    "JavaScript",
+    "Web Development"
+  ],
+  "skills": [
+    "Frontend Development",
+    "Backend Development",
+    "Web Design",
+    "Database Management"
+  ]
 };
 
 export default function RootLayout({
@@ -89,48 +131,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Moch. Althaf Jauhar",
-            "url": "https://althaf.site",
-            "image": "https://althaf.site/assets/lanyard/althaf.png",
-            "sameAs": [
-              "https://github.com/Studentalthaf",
-              "https://www.instagram.com/_alauhar"
-            ],
-            "jobTitle": "Web Developer",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Freelance"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "ID",
-              "addressRegion": "Indonesia"
-            },
-            "alumniOf": {
-              "@type": "EducationalOrganization",
-              "name": "Universitas Negeri Malang"
-            },
-            "description": "Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel.",
-            "knowsAbout": [
-              "React.js",
-              "Next.js",
-              "Laravel",
-              "PHP",
-              "JavaScript",
-              "Web Development"
-            ],
-            "skills": [
-              "Frontend Development",
-              "Backend Development",
-              "Web Design",
-              "Database Management"
-            ]
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

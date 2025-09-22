@@ -41,8 +41,8 @@ type DockItemProps = {
   isDark: boolean; // Teruskan prop isDark ke DockItem
 };
 
-// Wrap Link dengan motion()
-const MotionLink = motion(Link);
+// Wrap Link dengan motion
+const MotionLink = motion(Link) as any;
 
 function DockItem({
   children,
@@ -224,6 +224,16 @@ const Dock: React.FC<DockProps> = ({
     }
      // Tidak perlu trigger effect saat mouseX berubah, hanya saat pathname/items berubah
   }, [pathname, items]); // Hapus mouseX dari dependencies agar tidak loop
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // atau render versi statis/placeholder
+  }
 
   return (
     <motion.div
