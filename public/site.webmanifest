@@ -1,0 +1,27 @@
+{
+  "name": "Moch. Althaf Jauhar Portfolio",
+  "short_name": "Althaf Portfolio",
+  "description": "Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/as.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/lanyard/althaf.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait"
+}
