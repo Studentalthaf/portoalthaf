@@ -7,15 +7,15 @@ import Image from "next/image";
 import TiltedCard from "./components/TiltedCard/TiltedCard";
 import ContactForm from "./components/ContactForm/ContactForm";
 import TextType from "./components/TextType/TextType";
-import { 
-  FaReact, 
-  FaInstagram, 
-  FaWhatsapp, 
-  FaEnvelope, 
-  FaGithub, 
-  FaMicrosoft, 
-  FaHome, 
-  FaUser, 
+import {
+  FaReact,
+  FaInstagram,
+  FaWhatsapp,
+  FaEnvelope,
+  FaGithub,
+  FaMicrosoft,
+  FaHome,
+  FaUser,
   FaCode,
   FaHtml5,
   FaCss3Alt,
@@ -23,15 +23,16 @@ import {
 } from 'react-icons/fa';
 
 import CVDownloadButton from './components/CVDownloadButton/CVDownloadButton';
+import GitHubContributions from './components/GitHubContributions/GitHubContributions';
 
-import { 
-  SiNextdotjs, 
-  SiJavascript, 
-  SiLaravel, 
-  SiPhp, 
+import {
+  SiNextdotjs,
+  SiJavascript,
+  SiLaravel,
+  SiPhp,
   SiFigma,
   SiPython,
-  SiGooglecolab 
+  SiGooglecolab
 } from 'react-icons/si';
 import Dock from './components/Dock/Dock';
 import ScrollColorText from "./components/ScrollColorText/ScrollColorText";
@@ -282,6 +283,10 @@ export default function Home() {
                 variableSpeed={false}
                 onSentenceComplete={() => { }}
               />
+
+
+              {/* GitHub Activity */}
+              <GitHubContributions />
               <div className="mt-8 text-center">
                 <CVDownloadButton cvPath="/assets/cv/cv_ats.pdf" />
               </div>
@@ -551,7 +556,7 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-yellow-500/20 text-yellow-400 mb-3">
-                        Agu 2025 
+                        Agu 2025
                       </span>
                       <h3 className="text-2xl font-bold text-white mb-2">IT Helpdesk (Online Assessment Support Specialist)</h3>
                       <p className="text-yellow-400 font-semibold">Quantum HRM International</p>
@@ -568,7 +573,7 @@ export default function Home() {
                           </li>
                           <li className="flex items-start">
                             <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></span>
-                             Served as the main technical point of contact via live chat and helpdesk channels, rapidly resolving candidate issues such as login errors, browser compatibility, and network problems.
+                            Served as the main technical point of contact via live chat and helpdesk channels, rapidly resolving candidate issues such as login errors, browser compatibility, and network problems.
                           </li>
                         </ul>
                         <div className="flex flex-wrap gap-2 pt-4">
@@ -592,7 +597,7 @@ export default function Home() {
       <SectionReveal as="section" id="skills" className="relative z-10 py-16 bg-black" amount={0.2}>
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">Skills</h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Hard Skills */}
             <div>
@@ -600,7 +605,7 @@ export default function Home() {
                 <h3 className="text-3xl font-bold text-white mb-4 text-center lg:text-left">Hard Skills</h3>
                 <div className="w-full h-px bg-white/20"></div>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Web Development Skills */}
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6">
@@ -610,7 +615,7 @@ export default function Home() {
                       <FaReact className="w-6 h-6 text-[#61dafb]" />
                       <span className="text-white">React.js</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-4">
                       <SiNextdotjs className="w-6 h-6 text-white" />
                       <span className="text-white">Next.js</span>
@@ -620,7 +625,7 @@ export default function Home() {
                       <SiLaravel className="w-6 h-6 text-[#ff2d20]" />
                       <span className="text-white">Laravel</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-4">
                       <SiPhp className="w-6 h-6 text-[#777bb4]" />
                       <span className="text-white">PHP</span>
@@ -641,7 +646,7 @@ export default function Home() {
                       <SiFigma className="w-6 h-6 text-[#a259ff]" />
                       <span className="text-white">Figma</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-4">
                       <FaMicrosoft className="w-6 h-6 text-[#0078D4]" />
                       <span className="text-white">Microsoft Office</span>
@@ -656,16 +661,16 @@ export default function Home() {
                     <div className="flex items-center gap-4">
                       <span className="w-6 h-6 text-white">
                         <svg viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 0C5.372 0 0 2.688 0 6v12c0 3.312 5.372 6 12 6s12-2.688 12-6V6c0-3.312-5.372-6-12-6zm0 2c6.075 0 10 2.239 10 4s-3.925 4-10 4S2 7.761 2 6s3.925-4 10-4z"/>
+                          <path d="M12 0C5.372 0 0 2.688 0 6v12c0 3.312 5.372 6 12 6s12-2.688 12-6V6c0-3.312-5.372-6-12-6zm0 2c6.075 0 10 2.239 10 4s-3.925 4-10 4S2 7.761 2 6s3.925-4 10-4z" />
                         </svg>
                       </span>
                       <span className="text-white">MySQL</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-4">
                       <span className="w-6 h-6 text-white">
                         <svg viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 0C5.372 0 0 2.688 0 6v12c0 3.312 5.372 6 12 6s12-2.688 12-6V6c0-3.312-5.372-6-12-6zm0 2c6.075 0 10 2.239 10 4s-3.925 4-10 4S2 7.761 2 6s3.925-4 10-4z"/>
+                          <path d="M12 0C5.372 0 0 2.688 0 6v12c0 3.312 5.372 6 12 6s12-2.688 12-6V6c0-3.312-5.372-6-12-6zm0 2c6.075 0 10 2.239 10 4s-3.925 4-10 4S2 7.761 2 6s3.925-4 10-4z" />
                         </svg>
                       </span>
                       <span className="text-white">PostgreSQL</span>
