@@ -18,8 +18,11 @@ import {
   FaUser, 
   FaCode,
   FaHtml5,
-  FaCss3Alt 
+  FaCss3Alt,
+  FaFileDownload
 } from 'react-icons/fa';
+
+import CVDownloadButton from './components/CVDownloadButton/CVDownloadButton';
 
 import { 
   SiNextdotjs, 
@@ -276,10 +279,12 @@ export default function Home() {
                 pauseDuration={2000}
                 showCursor={true}
                 cursorCharacter="|"
-                variableSpeed={false}   // tambahkan ini
-                onSentenceComplete={() => { }} // tambahkan ini (callback opsional)
+                variableSpeed={false}
+                onSentenceComplete={() => { }}
               />
-
+              <div className="mt-8 text-center">
+                <CVDownloadButton cvPath="/assets/cv/cv_ats.pdf" />
+              </div>
             </div>
           </div>
         </div>
@@ -507,7 +512,7 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-green-500/20 text-green-400 mb-3">
-                        Jul 2025 - Agu 2025
+                        Jun 2025 - Agu 2025
                       </span>
                       <h3 className="text-2xl font-bold text-white mb-2">Session Host and Facilitator</h3>
                       <p className="text-green-400 font-semibold">Quantum HRM International</p>
@@ -546,7 +551,7 @@ export default function Home() {
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-yellow-500/20 text-yellow-400 mb-3">
-                        Agu 2025 - Sep 2025
+                        Agu 2025 
                       </span>
                       <h3 className="text-2xl font-bold text-white mb-2">IT Helpdesk (Online Assessment Support Specialist)</h3>
                       <p className="text-yellow-400 font-semibold">Quantum HRM International</p>
@@ -751,7 +756,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
                       WEBSITE COMPANY
                     </h3>
-                    <p className="text-gray-400 text-sm">SEBUAH WEBSITE PERUSAHAAN COFFEETIME (CAFE)</p>
+                    <p className="text-gray-400 text-sm">A company website for COFFEETIME (Cafe)</p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <div className="flex gap-3 items-center">
@@ -908,7 +913,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
                       WEB QRCODE GENERATOR
                     </h3>
-                    <p className="text-gray-400 text-sm">Website pembuatan QRcode yang berisikan data mahasiswa yang digunakan untuk validasi keaslian</p>
+                    <p className="text-gray-400 text-sm">QR Code generation website containing student data used for authenticity validation</p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <div className="flex flex-wrap gap-3 items-center">
@@ -949,7 +954,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
                       QR Code with Data Encryption
                     </h3>
-                    <p className="text-gray-400 text-sm">Web aplikasi pembuatan sertifikat dengan QRcode yang mengimplementasikan algoritma kriptografi ChaCha20 Poly-1305</p>
+                    <p className="text-gray-400 text-sm">Certificate generation web application with QR codes implementing the ChaCha20 Poly-1305 cryptographic algorithm</p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <div className="flex flex-wrap gap-3 items-center">
@@ -992,7 +997,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">
                       UI DESIGN & REDESAIN WEB
                     </h3>
-                    <p className="text-gray-400 text-sm">UI Design Water Tracker dan Redesain Website SI dengan fokus pada pengalaman pengguna</p>
+                    <p className="text-gray-400 text-sm">UI Design for Water Tracker and Information Systems Website Redesign with focus on user experience</p>
                   </div>
                   <div className="mt-4 pt-4 border-t border-white/10">
                     <div className="flex gap-3 items-center">
@@ -1022,7 +1027,7 @@ export default function Home() {
                 Get In Touch
               </h2>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                Punya project menarik? Mari berkolaborasi! Isi form di bawah dan pesan Anda akan langsung terkirim ke WhatsApp saya.
+                Have an interesting project? Let's collaborate! Fill out the form below and your message will be sent directly to my WhatsApp.
               </p>
             </div>
 
@@ -1033,15 +1038,15 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                      <p className="text-gray-300">Berpengalaman dalam pengembangan web modern</p>
+                      <p className="text-gray-300">Experienced in modern web development</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                      <p className="text-gray-300">Respon cepat dan komunikasi yang baik</p>
+                      <p className="text-gray-300">Quick response and excellent communication</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
-                      <p className="text-gray-300">Siap berkolaborasi untuk hasil terbaik</p>
+                      <p className="text-gray-300">Ready to collaborate for the best results</p>
                     </div>
                   </div>
                 </div>
@@ -1075,10 +1080,6 @@ export default function Home() {
                   {/* Instagram */}
                   <a href="https://www.instagram.com/_alauhar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
                     <FaInstagram className="w-7 h-7" /> @_alauhar
-                  </a>
-                  {/* WhatsApp */}
-                  <a href="https://wa.me/081556442718" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">
-                    <FaWhatsapp className="w-7 h-7" /> 081556442718
                   </a>
                   {/* Email */}
                   <a href="mailto:jauharalthaf@gmail.com" className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold text-lg shadow-md hover:scale-105 transition-transform">

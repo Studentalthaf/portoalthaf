@@ -22,13 +22,13 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: "Moch. Althaf Jauhar | Web Developer Portfolio",
-  description: "Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel. Spesialisasi dalam pengembangan web modern dan responsif.",
+  description: "Portfolio website of Althaf, a Web Developer focused on React, Next.js, and Laravel. Specializing in modern and responsive web development.",
   authors: [{ name: "Moch. Althaf Jauhar", url: "https://althaf.site" }],
   keywords: ["Web Developer", "React", "Next.js", "Laravel", "Portfolio", "Althaf", "Frontend Developer", "Backend Developer", "Full Stack Developer", "Indonesia"],
   metadataBase: new URL('https://althaf.site'),
   openGraph: {
     title: 'Moch. Althaf Jauhar | Web Developer Portfolio',
-    description: 'Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel. Spesialisasi dalam pengembangan web modern dan responsif.',
+    description: 'Portfolio website of Althaf, a Web Developer focused on React, Next.js, and Laravel. Specializing in modern and responsive web development.',
     url: 'https://althaf.site',
     siteName: 'Althaf Portfolio',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Moch. Althaf Jauhar | Web Developer Portfolio',
-    description: 'Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel.',
+    description: 'Portfolio website of Althaf, a Web Developer focused on React, Next.js, and Laravel.',
     images: ['https://althaf.site/assets/lanyard/althaf.png']
   },
   robots: {
@@ -106,7 +106,7 @@ const jsonLd = {
     "@type": "EducationalOrganization",
     "name": "Universitas Negeri Malang"
   },
-  "description": "Portfolio website Althaf, seorang Web Developer yang berfokus pada React, Next.js, dan Laravel.",
+  "description": "Portfolio website of Althaf, a Web Developer focused on React, Next.js, and Laravel.",
   "knowsAbout": [
     "React.js",
     "Next.js",
